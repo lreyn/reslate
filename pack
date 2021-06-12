@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Packing new docs"
+npm run build
+rsync --delete -az -v _site/ root@cdn.pegasusgateway.com:/var/www/cdn/lreyn/docs/
+
+ssh root@cdn.pegasusgateway.com chown -R www-data:www-data /var/www/cdn/lreyn/
+echo "All done :)"
+exit

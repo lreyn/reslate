@@ -61,8 +61,81 @@ under the License.
     </script>
     <%- include('head.ejs',{}) %>
   </head>
+  <style>
+      #top_header {
+          top: 0;
+          height: 30px;
+          background: #005596;
+          border: none;
+          width: 100%;
+          position: fixed;
+          z-index: 60;
+      }
 
+      .container ul {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+      }
+
+      .container ul li {
+          display: inline;
+      }
+
+      .sub_menu {
+          margin-right: 10px;
+      }
+
+      .sub_menu a {
+          /*-webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, transparent), color-stop(0.5, #fafafa), color-stop(0.5, #fafafa), color-stop(1, transparent)) 0 100%; */
+          border-right: 1px solid #333;
+          border-right-width: 1px;
+          border-left-width: 0px;
+          border-top-width: 0px;
+          border-bottom-width: 0px;
+          height: 10px;
+          padding: 5px 10px;
+          padding-bottom: 15px;
+          float: right;
+          color: #fafafa;
+          text-decoration: none;
+      }
+
+      .sub_menu a:hover {
+          float: right;
+          color: #fafafa;
+          text-decoration: underline;
+      }
+
+      .container .sub_menu ul {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+      }
+
+      .container .sub_menu ul li {
+          display: inline;
+          padding: 10px;
+      }
+  </style>
+  
   <body <% if (page_classes) {%>class="<%= page_classes %>" <% } %>data-languages="<%- language_array(language_tabs) %>">
+    <!-- START MAIN HEADER -->
+    <div id="top_header">
+      <div class="container">
+        <div class="sub_menu">
+          <ul>
+            <li><a target="_blank" href="http://github.com/dctdevelop/pegasus">Repository</a></li>
+            <li><a target="_blank" href="http://pegasus1.pegasusgateway.com/api-static/docs">API reference</a></li>
+            <li><a href="#master-fields-list">Fields list</a></li>
+            <li><a target="_blank" href="http://support.digitalcomtech.com">Support</a></li>
+            <li><a target="_blank" href="http://digitalcomtech.com">Main site</a></li>
+          </ul>
+        </div>            
+      </div>
+    </div>
+    <!-- END MAIN HEADER --> 
+    
     <a href="#" id="nav-button">
       <span>
         NAV

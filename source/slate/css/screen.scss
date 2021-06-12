@@ -1,3 +1,4 @@
+@use "sass:math";
 @charset "utf-8";
 @import 'normalize';
 @import 'variables';
@@ -49,7 +50,7 @@ html, body {
 
 .toc-wrapper {
   transition: left 0.3s ease-in-out;
-
+  margin-top: 30px;
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
@@ -75,7 +76,7 @@ html, body {
   .logo {
     display: block;
     max-width: 100%;
-    margin-bottom: $logo-margin;
+    margin: $logo-margin;
   }
 
   &>.search {
@@ -213,7 +214,7 @@ html, body {
 #nav-button {
   span {
     display: block;
-    $side-pad: $main-padding / 2 - 8px;
+    $side-pad: math.div($main-padding, 2) - 8px;
     padding: $side-pad $side-pad $side-pad;
     background-color: rgba($main-bg, 0.7);
     transform-origin: 0 0;
@@ -316,10 +317,12 @@ html, body {
 
 .content {
   // fixes webkit rendering bug for some: see #538
+  transform: translateZ(0);
   -webkit-transform: translateZ(0);
   // to place content above the dark box
   position: relative;
   z-index: 30;
+  margin-top: 30px;
 
   &:after {
     content: '';
@@ -520,6 +523,7 @@ html, body {
     background-color: $code-bg;
     color: #fff;
 
+    padding: 0.5em;
     margin: 0;
     width: $examples-width;
 
@@ -549,7 +553,11 @@ html, body {
   blockquote {
     &>p {
       background-color: $code-annotation-bg;
+      border-radius: 2px;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #404040;
       padding: $code-annotation-padding 2em;
+      overflow-y: hidden;
       color: #eee;
     }
   }
