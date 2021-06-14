@@ -1676,18 +1676,18 @@ Example: tire location `019`, corresponds to `tire_axle: 1` & `tire_position: 3`
 
 tire: `019` has a pressure of `107` psi, etc.
 
-> <code style="display:contents">"ecu_tires_psi": "</code><code style="font-weight: bolder; color: red; display:contents;">AAA</code><code style="font-weight: bolder; color: #FBC02D;display:contents;">BBB</code><code style="font-weight: bolder; display:contents">,AAABBB,AAABBB,AAABBB..."</code>
+> <code style="display: contents">"ecu_tires_psi": "</code><code style="font-weight: bolder; color: red; display: contents;">AAA</code><code style="font-weight: bolder; color: #FBC02D; display: contents;">BBB</code><code style="font-weight: bolder; display: contents">,AAABBB,AAABBB,AAABBB..."</code>
 
 ecu_tires_psi | Description
 -------------:|-------------
-<pre style="font-weight: bolder; display: contents; color: red">AAA</pre> | 000 - 255. Tire Location.
-<pre style="font-weight: bolder; display: contents; color: #F9A825">BBB</pre> | Pressure (psi)
+| <pre style="font-weight: bolder; display: contents; color: red">AAA</pre> | 000 - 255. Tire Location.
+| <pre style="font-weight: bolder; display: contents; color: #F9A825">BBB</pre> | Pressure (psi)
 
 --- 
 
 > 
 
-> <code style="display:contents">"ecu_tires_tmp": "</code><code style="font-weight: bolder; color: red; display:contents;">AAA</code><code style="font-weight: bolder; color: #9575CD;display:contents;">BBB</code><code style="font-weight: bolder; display:contents">,AAABBB,AAABBB,AAABBB..."</code>
+> <code style="display: contents">"ecu_tires_tmp": "</code><code style="font-weight: bolder; color: red; display: contents;">AAA</code><code style="font-weight: bolder; color: #9575CD; display: contents;">BBB</code><code style="font-weight: bolder; display: contents">,AAABBB,AAABBB,AAABBB..."</code>
 
 **Tire temperature**
 
@@ -1697,15 +1697,15 @@ tire: `019` has a temperature of `23` °C, etc.
 
 ecu_tires_tmp | Description
 -------------:|-------------
-<pre style="font-weight: bolder; display: contents; color: red">AAA</pre> | 000 - 255. Tire Location.
-<pre style="font-weight: bolder; display: contents; color: #7E57C2">BBB</pre> | Temperature (°C)
+| <pre style="font-weight: bolder; display: contents; color: red">AAA</pre> | 000 - 255. Tire Location.
+| <pre style="font-weight: bolder; display: contents; color: #7E57C2">BBB</pre> | Temperature (°C)
 
 
 --- 
 
 > 
 
-> <code style="display:contents">"ecu_tires_warnings": "</code><code style="font-weight: bolder; color: red; display:contents;">AAA</code><code style="font-weight: bolder; color: #42A5F5;display:contents;">B</code><code style="font-weight:bolder; color: #D4E157; display:contents">C</code><code style="font-weight: bolder; color: #26A69A;display:contents;">D</code><code style="font-weight:bolder; color: #FF5722; display:contents">E</code><code style="font-weight: bolder; display:contents">,AAABCDE,AAABC..."</code>
+> <code style="display: contents">"ecu_tires_warnings": "</code><code style="font-weight: bolder; color: red; display: contents;">AAA</code><code style="font-weight: bolder; color: #42A5F5; display: contents;">B</code><code style="font-weight: bolder; color: #D4E157; display: contents">C</code><code style="font-weight: bolder; color: #26A69A; display: contents;">D</code><code style="font-weight: bolder; color: #FF5722; display: contents">E</code><code style="font-weight: bolder; display: contents">,AAABCDE,AAABC..."</code>
 
 **Tire Alerts (Continental)**
 *for Doran's hardware check out the tire conditions below*
@@ -1716,33 +1716,33 @@ tire `032` has no `0` Alarm warning, `0` TTM not defective, `3` TTM not supporte
 
 ecu_tpms_warnings | Description
 -----------------:|------------
-<pre style="font-weight: bolder; display: contents; color: red">AAA</pre> | 000 - 255. Tire Location.
-<pre style="font-weight: bolder; display: contents; color: #42A5F5">B</pre> | <pre style="font-weight: bolder; display: contents; color: #42A5F5">Alarm warning</pre>
-<pre style="font-weight: bolder; display: contents; color: #C0CA33">C</pre> | TTM defective (1 if TTM is defective)
-<pre style="font-weight: bolder; display: contents; color: #26A69A">D</pre> | <pre style="font-weight: bolder; display: contents; color: #26A69A">Loose TTM detection</pre>
-<pre style="font-weight: bolder; display: contents; color: #FF5722">E</pre> | Battery warning.
+| <pre style="font-weight: bolder; display: contents; color: red">AAA</pre> | 000 - 255. Tire Location.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">B</pre> | <pre style="font-weight: bolder; display: contents; color: #42A5F5">Alarm warning</pre>
+| <pre style="font-weight: bolder; display: contents; color: #C0CA33">C</pre> | TTM defective (1 if TTM is defective)
+| <pre style="font-weight: bolder; display: contents; color: #26A69A">D</pre> | <pre style="font-weight: bolder; display: contents; color: #26A69A">Loose TTM detection</pre>
+| <pre style="font-weight: bolder; display: contents; color: #FF5722">E</pre> | Battery warning.
 
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">Alarm warning</pre> | Description
-  -------------:|-------------
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">0</pre> | Ok.
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">1</pre> | Under-inflation warning.
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">2</pre> | Under inflation alarm.
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">3</pre> | Tire leak alarm.
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">4</pre> | TTM (Truck tire module) mute.
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">5</pre> | Temperature warning.
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">8</pre> | TTM over temperature warning.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">Alarm warning</pre> | Description
+| -------------:|-------------
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">0</pre> | Ok.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">1</pre> | Under-inflation warning.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">2</pre> | Under inflation alarm.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">3</pre> | Tire leak alarm.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">4</pre> | TTM (Truck tire module) mute.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">5</pre> | Temperature warning.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">8</pre> | TTM over temperature warning.
 
-  <pre style="font-weight: bolder; display: contents; color: #26A69A">Loose TTM detection</pre> | Description 
-  -------------------:|------------
-  <pre style="font-weight: bolder; display: contents; color: #26A69A">0</pre> | No problem
-  <pre style="font-weight: bolder; display: contents; color: #26A69A">1</pre> | TTM loose
-  <pre style="font-weight: bolder; display: contents; color: #26A69A">2</pre> | TTM turned
-  <pre style="font-weight: bolder; display: contents; color: #26A69A">3</pre> | Not supported
+| <pre style="font-weight: bolder; display: contents; color: #26A69A">Loose TTM detection</pre> | Description 
+| -------------------:|------------
+| <pre style="font-weight: bolder; display: contents; color: #26A69A">0</pre> | No problem
+| <pre style="font-weight: bolder; display: contents; color: #26A69A">1</pre> | TTM loose
+| <pre style="font-weight: bolder; display: contents; color: #26A69A">2</pre> | TTM turned
+| <pre style="font-weight: bolder; display: contents; color: #26A69A">3</pre> | Not supported
 
 
 > 
 
-> <code style="display:contents">"ecu_tpms_conditions": "</code><code style="font-weight: bolder; color: red; display:contents;">AAA</code><code style="font-weight: bolder; color: #42A5F5;display:contents;">B</code><code style="font-weight:bolder; color: #D4E157; display:contents">C</code><code style="font-weight: bolder; color: #26A69A;display:contents;">D</code><code style="font-weight:bolder; color: #FF5722; display:contents">E</code><code style="font-weight:bolder; color: #800080; display:contents">F</code><code style="font-weight:bolder; color: #6F4242; display:contents">G</code><code style="font-weight:bolder; color: #F81814; display:contents">H</code><code style="font-weight: bolder; display:contents">,AAABCDEFGH,AAABC..."</code>
+> <code style="display: contents">"ecu_tpms_conditions": "</code><code style="font-weight: bolder; color: red; display: contents;">AAA</code><code style="font-weight: bolder; color: #42A5F5; display: contents;">B</code><code style="font-weight: bolder; color: #D4E157; display: contents">C</code><code style="font-weight: bolder; color: #26A69A; display: contents;">D</code><code style="font-weight: bolder; color: #FF5722; display: contents">E</code><code style="font-weight: bolder; color: #800080; display: contents">F</code><code style="font-weight: bolder; color: #6F4242; display: contents">G</code><code style="font-weight: bolder; color: #F81814; display: contents">H</code><code style="font-weight: bolder; display: contents">,AAABCDEFGH,AAABC..."</code>
 
 
 **Tire Conditions (Doran)**
@@ -1753,62 +1753,62 @@ tire `034` has the sensor status OK (`1`), no airleak (`0`), `3` which is always
 
 ecu_tpms_conditions | Description
 -----------------:|------------
-<pre style="font-weight: bolder; display: contents; color: red">AAA</pre> | 000 - 255. Tire Location.
-<pre style="font-weight: bolder; display: contents; color: #42A5F5">B</pre> | <pre style="font-weight: bolder; display: contents; color: #42A5F5">Sensor Status</pre>
-<pre style="font-weight: bolder; display: contents; color: #D4E157">C</pre> | <pre style="font-weight: bolder; display: contents; color: #D4E157">Air Leak</pre>
-<pre style="font-weight: bolder; display: contents; color: #26A69A">D</pre> | Electrical status (not supported, always 3)</pre>
-<pre style="font-weight: bolder; display: contents; color: #FF5722">E</pre> | <pre style="font-weight: bolder; display: contents; color: #FF5722">Tire Temperature</pre>
-<pre style="font-weight: bolder; display: contents; color: #800080">F</pre> | <pre style="font-weight: bolder; display: contents; color: #800080">System ID</pre>
-<pre style="font-weight: bolder; display: contents; color: #6F4242">G</pre> | <pre style="font-weight: bolder; display: contents; color: #6F4242">Threshold detection</pre>
-<pre style="font-weight: bolder; display: contents; color: #F81814">H</pre> | <pre style="font-weight: bolder; display: contents; color: #F81814">Validity</pre>
+| <pre style="font-weight: bolder; display: contents; color: red">AAA</pre> | 000 - 255. Tire Location.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">B</pre> | <pre style="font-weight: bolder; display: contents; color: #42A5F5">Sensor Status</pre>
+| <pre style="font-weight: bolder; display: contents; color: #D4E157">C</pre> | <pre style="font-weight: bolder; display: contents; color: #D4E157">Air Leak</pre>
+| <pre style="font-weight: bolder; display: contents; color: #26A69A">D</pre> | Electrical status (not supported, always 3)</pre>
+| <pre style="font-weight: bolder; display: contents; color: #FF5722">E</pre> | <pre style="font-weight: bolder; display: contents; color: #FF5722">Tire Temperature</pre>
+| <pre style="font-weight: bolder; display: contents; color: #800080">F</pre> | <pre style="font-weight: bolder; display: contents; color: #800080">System ID</pre>
+| <pre style="font-weight: bolder; display: contents; color: #6F4242">G</pre> | <pre style="font-weight: bolder; display: contents; color: #6F4242">Threshold detection</pre>
+| <pre style="font-weight: bolder; display: contents; color: #F81814">H</pre> | <pre style="font-weight: bolder; display: contents; color: #F81814">Validity</pre>
 
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">Sensor Status</pre> | Description
-  -------------:|-------------
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">0</pre> | Mute.
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">1</pre> | Signal OK.
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">2</pre> | Not defined.
-  <pre style="font-weight: bolder; display: contents; color: #42A5F5">3</pre> | Defective.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">Sensor Status</pre> | Description
+| -------------:|-------------
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">0</pre> | Mute.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">1</pre> | Signal OK.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">2</pre> | Not defined.
+| <pre style="font-weight: bolder; display: contents; color: #42A5F5">3</pre> | Defective.
 
-  <pre style="font-weight: bolder; display: contents; color: #D4E157">Air Leak</pre> | Description 
-  -------------------:|------------
-  <pre style="font-weight: bolder; display: contents; color: #D4E157">0</pre> | No fault
-  <pre style="font-weight: bolder; display: contents; color: #D4E157">1</pre> | Fast leak
-  <pre style="font-weight: bolder; display: contents; color: #D4E157">2</pre> | Error
-  <pre style="font-weight: bolder; display: contents; color: #D4E157">3</pre> | Not supported
+| <pre style="font-weight: bolder; display: contents; color: #D4E157">Air Leak</pre> | Description 
+| -------------------:|------------
+| <pre style="font-weight: bolder; display: contents; color: #D4E157">0</pre> | No fault
+| <pre style="font-weight: bolder; display: contents; color: #D4E157">1</pre> | Fast leak
+| <pre style="font-weight: bolder; display: contents; color: #D4E157">2</pre> | Error
+| <pre style="font-weight: bolder; display: contents; color: #D4E157">3</pre> | Not supported
 
-  <pre style="font-weight: bolder; display: contents; color: #FF5722">Tire Temperature</pre> | Description 
-  -------------------:|------------
-  <pre style="font-weight: bolder; display: contents; color: #FF5722">0</pre> | Temperature OK
-  <pre style="font-weight: bolder; display: contents; color: #FF5722">1</pre> | Over temperature
-  <pre style="font-weight: bolder; display: contents; color: #FF5722">2</pre> | Not used
-  <pre style="font-weight: bolder; display: contents; color: #FF5722">3</pre> | Not supported
+| <pre style="font-weight: bolder; display: contents; color: #FF5722">Tire Temperature</pre> | Description 
+| -------------------:|------------
+| <pre style="font-weight: bolder; display: contents; color: #FF5722">0</pre> | Temperature OK
+| <pre style="font-weight: bolder; display: contents; color: #FF5722">1</pre> | Over temperature
+| <pre style="font-weight: bolder; display: contents; color: #FF5722">2</pre> | Not used
+| <pre style="font-weight: bolder; display: contents; color: #FF5722">3</pre> | Not supported
 
-  <pre style="font-weight: bolder; display: contents; color: #800080">System ID</pre> | Description 
-  -------------------:|------------
-  <pre style="font-weight: bolder; display: contents; color: #800080">0</pre> | Truck
-  <pre style="font-weight: bolder; display: contents; color: #800080">1</pre> | Trailer
+| <pre style="font-weight: bolder; display: contents; color: #800080">System ID</pre> | Description 
+| -------------------:|------------
+| <pre style="font-weight: bolder; display: contents; color: #800080">0</pre> | Truck
+| <pre style="font-weight: bolder; display: contents; color: #800080">1</pre> | Trailer
 
-  <pre style="font-weight: bolder; display: contents; color: #6F4242">Threshold Detection</pre> | Description 
-  -------------------:|------------
-  <pre style="font-weight: bolder; display: contents; color: #6F4242">0</pre> | Extreme over pressure
-  <pre style="font-weight: bolder; display: contents; color: #6F4242">1</pre> | Over pressure; 25% over baseline
-  <pre style="font-weight: bolder; display: contents; color: #6F4242">2</pre> | Pressure good
-  <pre style="font-weight: bolder; display: contents; color: #6F4242">3</pre> | Under pressure
-  <pre style="font-weight: bolder; display: contents; color: #6F4242">4</pre> | Extreme under pressure; 25% under baseline
-  <pre style="font-weight: bolder; display: contents; color: #6F4242">5</pre> | Not defined
-  <pre style="font-weight: bolder; display: contents; color: #6F4242">6</pre> | Error
-  <pre style="font-weight: bolder; display: contents; color: #6F4242">7</pre> | Unknown
+| <pre style="font-weight: bolder; display: contents; color: #6F4242">Threshold Detection</pre> | Description 
+| -------------------:|------------
+| <pre style="font-weight: bolder; display: contents; color: #6F4242">0</pre> | Extreme over pressure
+| <pre style="font-weight: bolder; display: contents; color: #6F4242">1</pre> | Over pressure; 25% over baseline
+| <pre style="font-weight: bolder; display: contents; color: #6F4242">2</pre> | Pressure good
+| <pre style="font-weight: bolder; display: contents; color: #6F4242">3</pre> | Under pressure
+| <pre style="font-weight: bolder; display: contents; color: #6F4242">4</pre> | Extreme under pressure; 25% under baseline
+| <pre style="font-weight: bolder; display: contents; color: #6F4242">5</pre> | Not defined
+| <pre style="font-weight: bolder; display: contents; color: #6F4242">6</pre> | Error
+| <pre style="font-weight: bolder; display: contents; color: #6F4242">7</pre> | Unknown
   
-  <pre style="font-weight: bolder; display: contents; color: #F81814">Validity</pre> | Description 
-  -------------------:|------------
-  <pre style="font-weight: bolder; display: contents; color: #F81814">0</pre> | Not valid
-  <pre style="font-weight: bolder; display: contents; color: #F81814">1</pre> | Valid
+| <pre style="font-weight: bolder; display: contents; color: #F81814">Validity</pre> | Description 
+| -------------------:|------------
+| <pre style="font-weight: bolder; display: contents; color: #F81814">0</pre> | Not valid
+| <pre style="font-weight: bolder; display: contents; color: #F81814">1</pre> | Valid
 
 --- 
 
 > 
 
-> <code style="display:contents; overflow-x:scroll;">"ecu_tpms_provision": "</code><code style="font-weight: bolder; color: red; display:contents;">A</code><code style="font-weight: bolder; color: #42A5F5;display:contents;">B</code><code style="font-weight:bolder; color: #D4E157; display:contents">CC</code><code style="font-weight: bolder; color: #26A69A;display:contents;">DD</code><code style="font-weight: bolder; display:contents">,</code><code style="font-weight:bolder; color: #FF5722; display:contents">ZZZ</code><code style="font-weight:bolder; color: #4FC3F7; display:contents">XXXXXXXXXX</code><code style="font-weight: bolder; display:contents">,ZZZXXXX..."</code>
+> <code style="display: contents; overflow-x:scroll;">"ecu_tpms_provision": "</code><code style="font-weight: bolder; color: red; display: contents;">A</code><code style="font-weight: bolder; color: #42A5F5; display: contents;">B</code><code style="font-weight: bolder; color: #D4E157; display: contents">CC</code><code style="font-weight: bolder; color: #26A69A; display: contents;">DD</code><code style="font-weight: bolder; display: contents">,</code><code style="font-weight: bolder; color: #FF5722; display: contents">ZZZ</code><code style="font-weight: bolder; color: #4FC3F7; display: contents">XXXXXXXXXX</code><code style="font-weight: bolder; display: contents">,ZZZXXXX..."</code>
 
 **Tire provisioning**
 
@@ -1826,18 +1826,18 @@ on Doran's hardware you'll notice that the Sensor ID and the tire ID are the sam
 
 ecu_tpms_provision | Description
 ------------------:|-------------
-<pre style="font-weight: bolder; color: red; display:contents;">A</pre> | System ID (0: Truck, 1: Trailer)
-<pre style="font-weight: bolder; display: contents; color: #78909C">B</pre> | <pre style="font-weight: bolder; display: contents; color: #78909C">System state.</pre>
-<pre style="font-weight:bolder; color: #D4E157; display:contents">CC</pre> | Number of axles.
-<pre style="font-weight: bolder; color: #26A69A;display:contents;">DD</pre> | Number of tire sensors
-<pre style="font-weight:bolder; color: #FF5722; display:contents">ZZZ</pre> | 000 - 255. Tire Location. 
-<pre style="font-weight:bolder; color: #4FC3F7; display:contents">XXXXXXXXXX</pre> | Sensor ID (decimal) 
+| <pre style="font-weight: bolder; color: red; display: contents;">A</pre> | System ID (0: Truck, 1: Trailer)
+| <pre style="font-weight: bolder; color: #78909C; display: contents;">B</pre> | <pre style="font-weight: bolder; display: contents; color: #78909C">System state.</pre>
+| <pre style="font-weight: bolder; color: #D4E157; display: contents">CC</pre> | Number of axles.
+| <pre style="font-weight: bolder; color: #26A69A; display: contents;">DD</pre> | Number of tire sensors
+| <pre style="font-weight: bolder; color: #FF5722; display: contents">ZZZ</pre> | 000 - 255. Tire Location. 
+| <pre style="font-weight: bolder; color: #4FC3F7; display: contents">XXXXXXXXXX</pre> | Sensor ID (decimal) 
 
-<pre style="font-weight: bolder; display: contents; color: #78909C">System state</pre> | Description 
-------------:|-------------
-<pre style="font-weight: bolder; display: contents; color: #78909C">0</pre> | Ok.
-<pre style="font-weight: bolder; display: contents; color: #78909C">1</pre> | System malfunction (could indicate DTC errors or bad configuration of the CCU)
-<pre style="font-weight: bolder; display: contents; color: #78909C">2</pre> | System deactivated.
+| <pre style="font-weight: bolder; display: contents; color: #78909C">System state</pre> | Description 
+| ------------:|-------------
+| <pre style="font-weight: bolder; display: contents; color: #78909C">0</pre> | Ok.
+| <pre style="font-weight: bolder; display: contents; color: #78909C">1</pre> | System malfunction (could indicate DTC errors or bad configuration of the CCU)
+| <pre style="font-weight: bolder; display: contents; color: #78909C">2</pre> | System deactivated.
 
 It is recommended to use the tire provisioning field always when working with the TPMS data, for example when determining which sensor was the one that reported the mute alert, it's not enough to just read the TPMS warnings field, rather you have to compare it with the tpms provisioning field at that time.
 

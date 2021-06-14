@@ -73,7 +73,7 @@ var socket = io('https://aws-live-0.pegasusgateway.com/socket')
 
 Once you have the socket.io client loaded, lets make a fresh socket by initializing it.
 
-## Authentication
+## Authenticating
 
 ```javascript
 // Set up basic handlers
@@ -151,7 +151,7 @@ The envelope will contain the following properties :
 ## Payload
 The payload varies according to namespace.
 
-#### vehicle-events
+### vehicle-events
 Received whenever a vehicle sends a tracking event.
 
 The payload has a lot of keys, but the most important/relevant ones are:
@@ -223,11 +223,11 @@ _ver_pcel | internal use
 $$hashKey | internal use
 
 
-#### Detailed payload description
+### Detailed payload description
 
 ### DEVICE
 
-#### accel_state
+### accel_state
 
 Acceleration state
 
@@ -242,7 +242,7 @@ ap_ref_deg_x | reference or configured x plane value at the time of calibration
 ap_ref_deg_y | reference or configured y plane value at the time of calibration
 ap_ref_deg_z | reference or configured z plane value at the time of calibration
 
-#### asset
+### asset
 
 asset information
 Key | Description
@@ -260,7 +260,7 @@ ib | ibutton HEX ID
 last_aid_source | the last asset id source
 rfi_full_id | rfid
 
-#### config
+### config
 
 configuration description 
 
@@ -280,7 +280,7 @@ _config_state | 1 if pending, 3 if synchronized
 _epoch | time of the last config modification
 
 
-#### connection
+### connection
 
 connection state / information 
 
@@ -292,13 +292,13 @@ on_codes | codes for reasons why it came back online
 online | true if device is online
 _epoch | epoch timestamp of last connection change
 
-#### dcounters 
+### dcounters 
 
 device counters 
 
 for a detailed description you can check the [counters description](#counters_info)
 
-#### gpsknit
+### gpsknit
 
 gps information 
 
@@ -317,17 +317,17 @@ prev_lat | previous latitude
 prev_lon | previous longitude
 _epoch | epoch timestamp
 
-#### imei
+### imei
 
 IMEI is the imei of the device
 
-#### ios_state
+### ios_state
 
 state of the inputs and outputs
 
 for a detailed description you can check the [master field list](#master-fields-list)
 
-#### lastrx
+### lastrx
 
 last communication time 
 
@@ -337,7 +337,7 @@ msg_type | [type of message](#data_types)
 value | timestamp it reported that message type
 _epoch | timestamp it was received
 
-#### latest
+### latest
 
 latest data reported by the device
 
@@ -351,11 +351,11 @@ prefix | internal use
 vcounters | latest vehicle counters
 
 
-#### lcounts
+### lcounts
 
 Listener counts, more information coming soon
 
-#### legacy_set_out_state 
+### legacy_set_out_state 
 
 current state of the outputs, useful for knowing if output is pending to be set/reset
 
@@ -368,15 +368,15 @@ instruction | current instruction
 set_at | epoch time it was set at
 uid | user id that set it
 
-#### lrates
+### lrates
 
 Listener rates, more information coming soon
 
-#### muted_evs: 
+### muted_evs: 
 
 Muted or [silenced events](#silencing-events) on the device information
 
-#### net_reg
+### net_reg
 
 Network registration information
 
@@ -390,7 +390,7 @@ cf_rssi | RSSI
 cf_type | Registration type (2g, 3g, lte, etc)
 _epoch | Network information last update epoch
 
-#### network
+### network
 
 network information from device
 Key | Description
@@ -401,7 +401,7 @@ op | operator
 sim | sim id
 _epoch | epoch timestamp 
 
-#### outbox 
+### outbox 
 
 Array with the commands pending to be sent to the device
 
@@ -414,7 +414,7 @@ time | Time message was placed on queue
 uid | User ID that sent the message
 useky | Internal use
 
-#### photos
+### photos
 
 state of the cameras connected to the device
 
@@ -426,15 +426,15 @@ ncams | number of cameras connected to device
 _epoch | timestamp the data was reported
 
 
-#### position_response
+### position_response
 
 Information about the latest response to a position message while the device was offline.
 
-#### satcom
+### satcom
 
 Last satcom related information
 
-#### safeimmo_state 
+### safeimmo_state 
 
 current state of the safe immobilization 
 
@@ -446,19 +446,19 @@ set_at | epoch time it was set at
 uid | user id that set it
 _epoch | timestamp
 
-#### set_out_state
+### set_out_state
 
 Output activation information, whether or not an instruction is pending to be sent to manipulate an output
 
-#### sigfox
+### sigfox
 
 Last sigfox related information
 
-#### sim
+### sim
 
 SIM card related information including iccid, imsi, operator, and more.
 
-#### trip
+### trip
 
 device trip information
 
@@ -482,7 +482,7 @@ system_time_epoch | system time at start of trip
 vid | vehicle id
 _epoch | epoch timestamp
 
-#### trip_session
+### trip_session
 
 device trip session information
 
@@ -501,7 +501,7 @@ __persistent | internal use
 __version | internal use
 _epoch | epoch timestamp of trip_session
 
-#### trip_setup
+### trip_setup
 
 Key | Description
 ----|-------------
@@ -509,16 +509,16 @@ method | how the trip is formed (whether with tracker or gps events)
 state | raw trip message setup from Syrus, for more info check XATT on syrus manual
 _epoch | epoch timestamp
 
-#### vcounters 
+### vcounters 
 
 user editable vehicle counters, for more information go to [counters](#counters_info)
 
 
-#### vehicle 
+### vehicle 
 
 vehicle information
 
-#### version
+### version
 
 Key | Description
 ----|-------------
@@ -527,7 +527,7 @@ extras | firmware extra information
 msg | device message 
 number | version firmware number 
 
-#### virtual_distance
+### virtual_distance
 
 virtual distance calculated via lat lon deltas
 
@@ -539,7 +539,7 @@ lon | longitude
 value | distance for device 
 _epoch | 
 
-#### virtual_ignition
+### virtual_ignition
 
 virtual ignition calculated based on the status of the io_ign
 
@@ -560,7 +560,7 @@ _epoch | Time of last virtual_ignition change
 list of event parameters reported by device, check out [master field list](#master-fields-list) for more info
 
 
-#### vehicle-nstat * 
+### vehicle-nstat * 
 *Deprecated on 1.9* Received whenever a vehicle changes its ONLINE/OFFLINE status.
 
 <aside class="warning">As of version 1.9 the vehicle-nstat was changed into the vehicle-events payload under device -> connection</aside>
