@@ -31,27 +31,28 @@ All geofences will also have a `bbox`, or [bounding box](http://geojson.org/geoj
 
 ```json
 {
-  "geometry": {
-    "type": "Circle",
-    "radius": 105,
-    "coordinates": [
-      -82.28900,
-      24.78238
-    ]
-  },
-  "properties": {
-    "name": "warehouse 234",
-    "visibility": "groups",
-    "groups": [
-      500
-    ],
-    "custom": {
-      "foo": "bar",
-      "something": true
+    "type": "Feature",
+    "geometry": {
+        "type": "Circle",
+        "radius": 105,
+        "coordinates": [
+            -82.289,
+            24.78238
+        ]
     },
-    "types": [],
-    "description": "this is a sample description"
-  }
+    "properties": {
+        "name": "warehouse 234",
+        "visibility": "groups",
+        "groups": [
+            500
+        ],
+        "custom": {
+            "foo": "bar",
+            "something": true
+        },
+        "types": [],
+        "description": "this is a sample description"
+    }
 }
 ```
 
@@ -63,41 +64,42 @@ All geofences will also have a `bbox`, or [bounding box](http://geojson.org/geoj
 
 ```json
 {
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [
-          -81.07642,
-          26.38707
-        ],
-        [
-          -80.96106,
-          26.27383
-        ],
-        [
-          -81.11487,
-          26.21471
-        ],
-        [
-          -81.23023,
-          26.29353
-        ],
-        [
-          -81.07642,
-          26.38707
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -81.07642,
+                    26.38707
+                ],
+                [
+                    -80.96106,
+                    26.27383
+                ],
+                [
+                    -81.11487,
+                    26.21471
+                ],
+                [
+                    -81.23023,
+                    26.29353
+                ],
+                [
+                    -81.07642,
+                    26.38707
+                ]
+            ]
         ]
-      ]
-    ]
-  },
-  "properties": {
-    "name": "Square Polygon",
-    "visibility": "all",
-    "types": [
-      55
-    ],
-    "description": "Warehouse with small packages"
-  }
+    },
+    "properties": {
+        "name": "Square Polygon",
+        "visibility": "all",
+        "types": [
+            55
+        ],
+        "description": "Warehouse with small packages"
+    }
 }
 ```
 
@@ -144,6 +146,7 @@ If you set the visibility to "groups" you'll have to specify in an array called:
 
 ```json
 {
+    "type": "Feature",
     "geometry": {
         "type": "Circle",
         "radius": 52,
@@ -155,8 +158,8 @@ If you set the visibility to "groups" you'll have to specify in an array called:
     "properties": {
         "name": "Warehouse 3",
         "custom": {
-          "contact": "John Smith",
-          "amount": 123
+            "contact": "John Smith",
+            "amount": 123
         }
     }
 }
