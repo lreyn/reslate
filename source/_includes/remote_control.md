@@ -46,12 +46,15 @@ Response
 --------: | -------
 ky | Unique key that identifies each configuration
 name | Name of the configuration
+restricted_device |  Configuration is restricted to specific device types
 restricted_fw |  Min and max device firmwares allowed to upload configurations (applies to Syrus devices only)
 warnings | internal use
 limit_remote_console | Limits the amount of commands able to be sent per device via the console
 limit_remote_qpv | Limits the amount of position queries able to be sent per device
 
 * `ky` refers to a unique key that identifies each configuration, when you're looking at the parameters for a particular configuration you use the `api/configurations/ky` to reach it.
+
+* `restricted_device` is a restriction for a specific device model, for example a custom third party device can be reporting to Pegasus and you can create a configuration for that specific device
 
 * `restricted_fw` has 3 fields, two for the min & max firmware, these have the format 
 
@@ -67,7 +70,7 @@ limit_remote_qpv | Limits the amount of position queries able to be sent per dev
 
 * `limit_remote_qpv` limit on the amount of position queries that can be triggered per device
 
-#### View
+### View
 
 > View a particular managed configuration
 
@@ -99,6 +102,26 @@ limit_remote_qpv | Limits the amount of position queries able to be sent per dev
 }
 ```
 
+> Example third party device configuration
+
+```json
+{
+    "restricted_device": "custom",
+    "ev_labels": {
+        "in1on": "dooropn",
+        "in2on": "buzzeron",
+        "spd": "excess"
+    },
+    "ios_names": {
+        "io_in1": "SOS",
+        "io_in2": "Input #2"
+    },
+    "params": {
+        "safeimmo": false
+    }
+}
+```
+
 To view a managed configuration's contents
 
 GET `api/configurations/:ky`
@@ -118,6 +141,41 @@ params | Editable parameters in this config (used in [/remote](#remote-control))
 restricted_fw | Minimum firmware needed to load the configuration
 sms_alias_actions | SMS alias actions
 tracking_resolutions | Tracking resolutions
+
+<div id="evlabels"></div>
+
+### Event Labels
+
+> Update the event labels of a configuration
+
+> PUT [`api/configurations/:ky`](https://pegasus1.pegasusgateway.com/api/configurations/r021)
+
+```json
+{
+	"ev_labels": {
+		"in1on": "dooropn",
+        "in2on": "buzzeron",
+        "spd": "excess"
+    }
+}
+```
+
+> Map the numeric codes reported by a device to labels
+
+> PUT [`api/configurations/:ky`](https://pegasus1.pegasusgateway.com/api/configurations/r021)
+
+```json
+{
+    "ev_labels": {
+        "0": "prdtst",
+        "2": "ignon",
+        "4": "spd"
+    }	
+}
+```
+
+The event labels can map to codes reported by the Syrus and other devices, or convert one label to another (not both).
+
 
 ### Configuring a device
 
@@ -877,7 +935,7 @@ When an un-mute action is POSTed:
 * If device is already in `un-muted/un-listed`, nothing is done
 * else, the previously stored `SEDccABCDE[...]` is pushed to outbox
 
-#### GET
+### GET
 
 > GET api/device-mute/356612024151062
 
@@ -917,10 +975,10 @@ When an un-mute action is POSTed:
 
 An object containing muted-events is returned. Its keys follow the format evc-{evcode}
 
-#### Note
+### Note
 Only possibly muted event codes are returned. Check state to confirm event is actually muted/un-muted
 
-#### Muted event object
+### Muted event object
 
  Param | Description 
 --------- | -------
@@ -931,7 +989,7 @@ uid |  User that gave the last instrucion (mute/un-mute)
 time |  Object update epoch
 
 
-#### state
+### state
 
  State         | Description
 -------------- | ----------
@@ -942,7 +1000,7 @@ un-muting | SEDxx-restore sent. Code is in process of being un-muted
 un-muted | Got response to SEDxx-restore. Code is un-muted. This state is is equivalent as not having the muted-event returned on the muted-events object. This is state is temporal, yields to object being eliminated.
 ev-undefined | Tried silencing an undefined event. This is state is temporal, yields to object being eliminated.
 
-#### POST
+### POST
 
 > POST api/device-mute/460001331053605 
 
