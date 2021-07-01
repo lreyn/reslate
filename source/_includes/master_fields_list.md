@@ -237,7 +237,6 @@ Field | Info | Type | Unit | Base set
 `ecu_weights` | [Vehicle weights](#ecu-monitor) | string | kg | ✓
 `ecu_with_mil_distance` | [Distance traveled with MIL on](#ecu-monitor) | number | meter | ✓
 `ecu_with_mil_time` | [Time traveled with MIL on](#ecu-monitor) | number | minutes | 
-`ecu_ev_rpm` | Electric vehicle RPM | Number | rpm |
 `ecu_ev_motor_current` | Electric vehicle motor current | Number | A |
 `ecu_ev_motor_voltage` | Electric vehicle motor voltage | Number | V |
 `ecu_ev_soh` | Electric vehicle SOH | Number | |
@@ -245,11 +244,8 @@ Field | Info | Type | Unit | Base set
 `ecu_ev_mid_door_status` | Electric vehicle middle door status | Number | |
 `ecu_ev_front_door_status` | Electric vehicle front door status | Number | |
 `ecu_ev_rear_air_pressure` | Electric vehicle rear air pressure | Number | kPa |
-`ecu_ev_odometer` | Electric vehicle front air pressure | Number | kPa |
 `ecu_ev_front_air_pressure` | Electric vehicle odometer | Number | km |
-`ecu_ev_speed_2` | Electric vehicle speed 2 | Number | kph |
 `ecu_ev_throttle` | Electric vehicle throtle position | Number | % |
-`ecu_ev_vehicle_speed` | Electric vehicle speed | number | kph |
 `ecu_main_pos_relay_flt` | Fault of vehicle main-positive contactor | number | |
 `ecu_insulation_detection_status` | Work status: Insulation detection status | number | |
 `ecu_fault_level_of_insulation_detection` | Fault level of insulation detection | number | |
@@ -399,6 +395,10 @@ Field | Info | Type | Unit | Base set
 `temp4` | General purpose temperature 4 | number | °C | 
 `temp5` | General purpose temperature 5 | number | °C | 
 `temp6` | General purpose temperature 6 | number | °C | 
+`temp7` | General purpose temperature 7 | number | °C | 
+`temp8` | General purpose temperature 8 | number | °C | 
+`temp9` | General purpose temperature 9 | number | °C | 
+`temp10` | General purpose temperature 10 | number | °C | 
 `ti_sense` | Signal sense | boolean | |
 `ti_signal` | Signal | string |   
 `ti_thr` | Signal threshold | number | |
