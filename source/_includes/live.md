@@ -6,9 +6,15 @@ Web sockets allow you to subscribe to a variety of events generated from pegasus
 
 Pegasus Live communications ease programming by pushing the events to you, the developer, removing the need for periodic requests.
 
-All live communications are handled by the server found in your site's [/api](https://pegasus1.pegasusgateway.com/api/) response under `live_url`.
+All live communications are handled by the server found in your site's [/api](https://cloud.pegasusgateway.com/api/) response under `live_url`.
 
 You can go use that site to find a demo on how it's used, once loaded use the JS console to see the payload of the devices.
+
+The supported socket-io.client library is **v2.x.x**
+
+**Note that polling is disabled on the server, you must use `websocket` as a transport to succesfully connect.**
+
+*Use the Javascript tab on the right hand side to see sample code*
 
 ## Requirements
 
@@ -66,8 +72,9 @@ vehicle-nstat* | **deprecated on 1.9** changes in vehicle connectivity: ONLINE/O
 
 ```javascript
 
-//intialize the socket
-var socket = io('https://aws-live-0.pegasusgateway.com/socket')
+// Initialize the socket
+// you must use websocket as the transport, polling (default) is disabled
+var socket = io('https://aws-live-0.pegasusgateway.com/socket', {transports: ['websocket']})
 
 ```
 
@@ -99,7 +106,7 @@ socket.on('events', function(envelope){
 })
 
 var credentials = {
-    pegasus: "https://pegasus1.pegasusgateway.com", // replace with your gateway.
+    pegasus: "https://cloud.pegasusgateway.com", // replace with your gateway.
     auth  : "aebf772e8aa25491ed273c699baf4d35aa5c4c0342cd7b51606bbf8c" // Retrieve the token by logging via /api/login
 }
 
@@ -190,7 +197,7 @@ On your applications you'll want to show only when a new `event` came in, and ha
     "type": "events",
     "updates": ["device"],
     "_pkey": "pka.05",
-    "_site_url": "https://pegasus1.pegasusgateway.com",
+    "_site_url": "https://cloud.pegasusgateway.com",
     "_source": "pcore.listener",
     "_source_epoch": 1504910674.863004,
     "_ver_core": "1.9.0-rc1",
@@ -344,7 +351,7 @@ latest data reported by the device
 Key | Description
 ----|-------------
 counters | latest [counters](#counters_info) reported 
-data | latest data reported, same keys as [rawdata](https://pegasus1.pegasusgateway.com/api/rawdata) [more info](#master-fields-list)
+data | latest data reported, same keys as [rawdata](https://cloud.pegasusgateway.com/api/rawdata) [more info](#master-fields-list)
 ios | latest ios reported
 loc | latest location information 
 prefix | internal use
