@@ -2,7 +2,7 @@
 
 By default all fields marked in the `Base set` are included in [forwarders](#forwarders) unless you filter it in the general config. To add fields use the **keys** or **keys_include** options in the general field of the forwarders configuration
 
-[json format](https://pegasus1.pegasusgateway.com/api/resources/rawdata/keys?auth=06e06ce41fea91c5cb75b471271e95cbe7ce77cd8cd2f45d4f097abe)
+[json format](https://cloud.pegasusgateway.com/api/resources/rawdata/keys?auth=06e06ce41fea91c5cb75b471271e95cbe7ce77cd8cd2f45d4f097abe)
 
 [sql format](https://github.com/dctdevelop/pegasus/blob/master/resources/eventKeysMySQL.sql)
 

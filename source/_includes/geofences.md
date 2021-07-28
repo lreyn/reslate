@@ -7,13 +7,13 @@ The geofence API is based on the geojson spec, for more information on geojson v
 
 Please note that this api is [paginated](?json#pagination). 
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Geofence)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Geofence)
 
 <aside class="info">The geojson spec does not officially handle Circle type geofences, however there are <a href="https://github.com/geojson/geojson-spec/wiki/Proposal---Circles-and-Ellipses-Geoms">proposals in place</a></aside>
 
 ## View 
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Geofence-GetGeofences)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Geofence-GetGeofences)
 
 In order to view geofences you have to have the [scope](?json#scopes) `geofences` assigned to your user.
 
@@ -27,7 +27,7 @@ All geofences will also have a `bbox`, or [bounding box](http://geojson.org/geoj
 
 > Assign a custom property to this geofence
 
-> POST [api/geofences](https://pegasus1.pegasusgateway.com/api/geofences)
+> POST [api/geofences](https://cloud.pegasusgateway.com/api/geofences)
 
 ```json
 {
@@ -60,7 +60,7 @@ All geofences will also have a `bbox`, or [bounding box](http://geojson.org/geoj
 
 > Associated to geofence_type 55
 
-> POST [api/geofences](https://pegasus1.pegasusgateway.com/api/geofences)
+> POST [api/geofences](https://cloud.pegasusgateway.com/api/geofences)
 
 ```json
 {
@@ -103,7 +103,7 @@ All geofences will also have a `bbox`, or [bounding box](http://geojson.org/geoj
 }
 ```
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Geofence-CreateGeofence)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Geofence-CreateGeofence)
 
 When creating a geofence you have to specify the Geometry type you want to create, the API supports `Polygon` of 3 or more coordinates (up to 800 coordinates), `Circle`, or `LineString` types.
 
@@ -142,7 +142,7 @@ If you set the visibility to "groups" you'll have to specify in an array called:
 
 > Update name, radius, and add a custom property
 
-> PUT [api/geofences/:id](https://pegasus1.pegasusgateway.com/api/geofences/12)
+> PUT [api/geofences/:id](https://cloud.pegasusgateway.com/api/geofences/12)
 
 ```json
 {
@@ -165,7 +165,7 @@ If you set the visibility to "groups" you'll have to specify in an array called:
 }
 ```
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Geofence-UpdateGeofence)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Geofence-UpdateGeofence)
 
 When updating a geofence using the API, pass the geometry and properties object.
 
@@ -173,18 +173,18 @@ When updating a geofence using the API, pass the geometry and properties object.
 
 > Delete a fence
 
-> DELETE [/api/geofences/:id](https://pegasus1.pegasusgateway.com/api/geofences/12)
+> DELETE [/api/geofences/:id](https://cloud.pegasusgateway.com/api/geofences/12)
 
 > 204 NO CONTENT
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Geofence-DeleteGeofence)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Geofence-DeleteGeofence)
 
 <aside class="warning">Note that when you delete a geofence this affects any alerts or reports that were previously made that depended on the geofence</aside>
 
 
 ## Geofence Types
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Geofence_Types_Collections)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Geofence_Types_Collections)
 
 Geofence types are collections of geofences, a geofence can belong to one or many types.
 These collections are useful for quickly generating reports and scheduling them too.
@@ -214,7 +214,7 @@ For example, let's say that you have a fleet of delivery trucks that make daily 
 }
 ```
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Geofence_Types_Collections-CreateGeofenceTypes)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Geofence_Types_Collections-CreateGeofenceTypes)
 
 When creating a geofence type the important parameters are the `name`, `visibility` and `geofences`
 

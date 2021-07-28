@@ -167,10 +167,10 @@ The acceleration field is always the speed units, per second
 ## Timezone
 
 > List of available time zones <br>
-> [api/tz](https://pegasus1.pegasusgateway.com/api/tz)
+> [api/tz](https://cloud.pegasusgateway.com/api/tz)
 
 ```shell
-curl https://pegasus1.pegasusgateway.com/api/tz? \
+curl https://cloud.pegasusgateway.com/api/tz? \
     --header 'Authenticate: 99ff984fbe2c90603da515cdb193fda3146c9c4c9a347bcf062b0760'
 
 {"server_utc_epoch":1538478876.558243,"allowed":["Africa/Abidjan","Africa/Accra","Africa/Addis_Ababa","Africa/Algiers","Africa/Asmara","Africa/Bamako","Africa/Bangui","Africa/Banjul",...]}
@@ -187,7 +187,7 @@ You can change the timestamp by passing a URL param `tz` or an HTTP header value
 
 > URL param 
 
-> [api/rawdata?vehicles=2600&fields=$basic&duration=P1D&tz=America/New_York](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=2600&fields=$basic&duration=P1D&tz=America/New_York)
+> [api/rawdata?vehicles=2600&fields=$basic&duration=P1D&tz=America/New_York](https://cloud.pegasusgateway.com/api/rawdata?vehicles=2600&fields=$basic&duration=P1D&tz=America/New_York)
 
 ```json
 {
@@ -223,7 +223,7 @@ You can change the timestamp by passing a URL param `tz` or an HTTP header value
 > HTTP Header
 
 ```shell
-curl 'https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=2600&fields=$basic&duration=PT1H' \
+curl 'https://cloud.pegasusgateway.com/api/rawdata?vehicles=2600&fields=$basic&duration=PT1H' \
     --header 'X-Time-Zone: America/New_York' \
     --header 'Authenticate: 99ff984fbe2c90603da515cdb193fda3146c9c4c9a347bcf062b0760'
 

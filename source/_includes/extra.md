@@ -163,9 +163,9 @@ Authenticate | INSERT_VALID_TOKEN
 
 ### Visualizing the data
 
-> POST [api/vehicles](https://pegasus1.pegasusgateway.com/api/vehicles)
+> POST [api/vehicles](https://cloud.pegasusgateway.com/api/vehicles)
 
-> make sure prior to creating the vehicle the device exists on the gateway [/devices](https://pegasus1.pegasusgateway.com/api/devices/357000000000009) api
+> make sure prior to creating the vehicle the device exists on the gateway [/devices](https://cloud.pegasusgateway.com/api/devices/357000000000009) api
 
 ```json
 {
@@ -197,7 +197,7 @@ Authenticate | INSERT_VALID_TOKEN
 
 > Requesting data for vehicle ID: 3263
 
-> GET [/api/rawdata?vehicles=3263&fields=$basic&duration=P1D](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=3263&fields=$basic&duration=P1D)
+> GET [/api/rawdata?vehicles=3263&fields=$basic&duration=P1D](https://cloud.pegasusgateway.com/api/rawdata?vehicles=3263&fields=$basic&duration=P1D)
 
 ```json
 {
@@ -226,7 +226,7 @@ Authenticate | INSERT_VALID_TOKEN
 
 In order to visualize the data that was uploaded, you'll need to associate the device to a vehicle ID. 
 
-To do this [create a vehicle](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Vehicle-CreateVehicle) with the correct `device_id`.
+To do this [create a vehicle](https://cloud.pegasusgateway.com/api-static/docs/#api-Vehicle-CreateVehicle) with the correct `device_id`.
 
 
 Once the data is uploaded it can be explored with the corresponding vehicle ID that's associated to the device.
@@ -252,7 +252,7 @@ Once the data is uploaded it can be explored with the corresponding vehicle ID t
 # Wireless
 
 > Get wireless sims
-> GET [api/m2m/wireless/v1/Sims](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims)
+> GET [api/m2m/wireless/v1/Sims](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims)
 
 * `/api/m2m/wireless/v1/Sims` which is exclusively for the management of DCT's wireless SIMs
 
@@ -272,11 +272,11 @@ Each wireless SIM features:
 
 > Get particular sim 
 > `sid` Wireless Sim ID
-> GET [/api/m2m/wireless/v1/Sims/:sid](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d)
+> GET [/api/m2m/wireless/v1/Sims/:sid](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d)
 
 ```json
 {
-    "unique_name": "Pegasus1 Syrus OBDII Demo 9",
+    "unique_name": "cloud Syrus OBDII Demo 9",
     "date_updated": "2020-03-28T17:03:37Z",
     "voice_url": null,
     "iccid": "8901260852291475879",
@@ -291,7 +291,7 @@ Each wireless SIM features:
     "sms_url": null,
     "ip_address": null,
     "voice_method": "POST",
-    "url": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d",
+    "url": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d",
     "friendly_name": null,
     "sms_fallback_url": null,
     "account_sid": "AC5e3bed6b465b3f2a60b2cf4f21474e5a",
@@ -300,22 +300,22 @@ Each wireless SIM features:
     "date_created": "2018-04-23T22:01:34Z",
     "commands_callback_url": null,
     "links": {
-        "data_sessions": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/DataSessions",
-        "usage_records": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/UsageRecords",
-        "rate_plan": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/RatePlans/WPc655a43a634490ad84d3df4e3ff30edd"
+        "data_sessions": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/DataSessions",
+        "usage_records": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/UsageRecords",
+        "rate_plan": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/RatePlans/WPc655a43a634490ad84d3df4e3ff30edd"
     }
 }
 ```
 
 > Get a wireless sim via the Iccid
 > `iccid` 20 digit SIM ID number
-> GET [/api/m2m/wireless/v1/Sims?Iccid=:iccid](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims?Iccid=8901260852291475879)
+> GET [/api/m2m/wireless/v1/Sims?Iccid=:iccid](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims?Iccid=8901260852291475879)
 
 ```json
 {
     "sims": [
         {
-            "unique_name": "Pegasus1 Syrus OBDII Demo 9",
+            "unique_name": "cloud Syrus OBDII Demo 9",
             "date_updated": "2020-03-28T17:03:37Z",
             "voice_url": null,
             "iccid": "8901260852291475879",
@@ -330,7 +330,7 @@ Each wireless SIM features:
             "sms_url": null,
             "ip_address": null,
             "voice_method": "POST",
-            "url": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d",
+            "url": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d",
             "friendly_name": null,
             "sms_fallback_url": null,
             "account_sid": "AC5e3bed6b465b3f2a60b2cf4f21474e5a",
@@ -339,18 +339,18 @@ Each wireless SIM features:
             "date_created": "2018-04-23T22:01:34Z",
             "commands_callback_url": null,
             "links": {
-                "data_sessions": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/DataSessions",
-                "usage_records": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/UsageRecords",
-                "rate_plan": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/RatePlans/WPc655a43a634490ad84d3df4e3ff30edd"
+                "data_sessions": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/DataSessions",
+                "usage_records": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/UsageRecords",
+                "rate_plan": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/RatePlans/WPc655a43a634490ad84d3df4e3ff30edd"
             }
         }
     ],
     "meta": {
         "page": 0,
         "page_size": 50,
-        "first_page_url": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims?Iccid=8901260852291475879&PageSize=50&Page=0",
+        "first_page_url": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims?Iccid=8901260852291475879&PageSize=50&Page=0",
         "previous_page_url": null,
-        "url": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims?Iccid=8901260852291475879&PageSize=50&Page=0",
+        "url": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims?Iccid=8901260852291475879&PageSize=50&Page=0",
         "next_page_url": null,
         "key": "sims"
     }
@@ -363,10 +363,10 @@ To view a particular wireless SIM you can use the `/api/m2m/wireless/v1/Sims/:si
 #### Rate plans
 
 > View rate plans
-> [api/m2m/wireless/v1/RatePlans](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/RatePlans)
+> [api/m2m/wireless/v1/RatePlans](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/RatePlans)
 
 > View particular rate plan
-> [/api/m2m/wireless/v1/RatePlans/:rate_plan_sid](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/RatePlans/WP1d1e35ae4daa3f2fd6c57d2117fb6979)
+> [/api/m2m/wireless/v1/RatePlans/:rate_plan_sid](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/RatePlans/WP1d1e35ae4daa3f2fd6c57d2117fb6979)
 > notice how it has a `data_limit` of 10MB
 
 ```json
@@ -382,7 +382,7 @@ To view a particular wireless SIM you can use the `/api/m2m/wireless/v1/Sims/:si
             "friendly_name": null,
             "account_sid": "AC5e3bed6b465b3f2a60b2cf4f21474e5a",
             "date_created": "2019-11-06T19:15:21Z",
-            "url": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/RatePlans/WP1d1e35ae4daa3f2fd6c57d2117fb6979",
+            "url": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/RatePlans/WP1d1e35ae4daa3f2fd6c57d2117fb6979",
             "messaging_enabled": true,
             "data_enabled": true,
             "sid": "WP1d1e35ae4daa3f2fd6c57d2117fb6979",
@@ -398,7 +398,7 @@ To view a particular wireless SIM you can use the `/api/m2m/wireless/v1/Sims/:si
 ```
 
 > Change the rate plan/data limit of a SIM
-> POST [/api/m2m/wireless/v1/Sims/:sid](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d)
+> POST [/api/m2m/wireless/v1/Sims/:sid](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d)
 
 ```json
 {
@@ -420,7 +420,7 @@ If the SIM does reach it's rate plan limit in 30 days, the state of the SIM will
 #### Activate/Suspend
 
 > Suspend a SIM
-> POST [/api/m2m/wireless/v1/Sims/:sid](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d)
+> POST [/api/m2m/wireless/v1/Sims/:sid](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d)
 
 ```json
 {
@@ -429,7 +429,7 @@ If the SIM does reach it's rate plan limit in 30 days, the state of the SIM will
 ```
 
 > Reactivate a SIM
-> POST [/api/m2m/wireless/v1/Sims/:sid](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d)
+> POST [/api/m2m/wireless/v1/Sims/:sid](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d)
 
 ```json
 {
@@ -456,7 +456,7 @@ updating | Updating |	The SIM is in the process of being updated.
 #### Send SMS
 
 > Send >QVR< to Wireless SIM
-> POST [/api/m2m/wireless/v1/Commands](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Commands)
+> POST [/api/m2m/wireless/v1/Commands](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Commands)
 
 ```json
 {
@@ -466,8 +466,8 @@ updating | Updating |	The SIM is in the process of being updated.
 ```
 
 > View SMS commands sent to a SIM
-> GET [/api/m2m/wireless/v1/Commands?Sim=:Sim_sid](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Commands?Sim=DE5787d29324d0fa1a6b4748046f16c38d)
-> GET [/api/m2m/wireless/v1/Commands?Iccid=:iccid](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Commands?Iccid=8901260852291475879)
+> GET [/api/m2m/wireless/v1/Commands?Sim=:Sim_sid](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Commands?Sim=DE5787d29324d0fa1a6b4748046f16c38d)
+> GET [/api/m2m/wireless/v1/Commands?Iccid=:iccid](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Commands?Iccid=8901260852291475879)
 
 ```json
 {
@@ -477,7 +477,7 @@ updating | Updating |	The SIM is in the process of being updated.
             "direction": "from_sim",
             "date_updated": "2020-02-28T16:48:52Z",
             "account_sid": "AC5e3bed6b465b3f2a60b2cf4f21474e5a",
-            "url": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Commands/DCdfe81b30b8fc720e07aa3e799ea7617a",
+            "url": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Commands/DCdfe81b30b8fc720e07aa3e799ea7617a",
             "command": "dns success!",
             "delivery_receipt_requested": true,
             "sid": "DCdfe81b30b8fc720e07aa3e799ea7617a",
@@ -496,7 +496,7 @@ To send commands you can use the `/api/m2m/wireless/v1/Commmands` api, just pass
 #### View consumption
 
 > View SIMs Usage
-> GET [/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/UsageRecords](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE41f2289340c8abc104150758549d8f22/UsageRecords)
+> GET [/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/UsageRecords](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE41f2289340c8abc104150758549d8f22/UsageRecords)
 
 ```json
 {
@@ -570,9 +570,9 @@ To send commands you can use the `/api/m2m/wireless/v1/Commmands` api, just pass
     "meta": {
         "page": 0,
         "page_size": 50,
-        "first_page_url": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE41f2289340c8abc104150758549d8f22/UsageRecords?PageSize=50&Page=0",
+        "first_page_url": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE41f2289340c8abc104150758549d8f22/UsageRecords?PageSize=50&Page=0",
         "previous_page_url": null,
-        "url": "https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE41f2289340c8abc104150758549d8f22/UsageRecords?PageSize=50&Page=0",
+        "url": "https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE41f2289340c8abc104150758549d8f22/UsageRecords?PageSize=50&Page=0",
         "next_page_url": null,
         "key": "usage_records"
     }
@@ -580,6 +580,6 @@ To send commands you can use the `/api/m2m/wireless/v1/Commmands` api, just pass
 ```
 
 > View SIMs Usage for particular time period
-> GET [/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/UsageRecords?Start=2020-04-01T04:00:00Z&End=2020-04-02T23:59:59Z&Granularity=daily](https://pegasus1.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE41f2289340c8abc104150758549d8f22/UsageRecords)
+> GET [/api/m2m/wireless/v1/Sims/DE5787d29324d0fa1a6b4748046f16c38d/UsageRecords?Start=2020-04-01T04:00:00Z&End=2020-04-02T23:59:59Z&Granularity=daily](https://cloud.pegasusgateway.com/api/m2m/wireless/v1/Sims/DE41f2289340c8abc104150758549d8f22/UsageRecords)
 
 To view the consumption of the SIM you can use the `UsageRecords` api

@@ -195,7 +195,7 @@ You can see how pegasus reports section displays the engine's manifest here.
 {
 	"configuration": {
 		"site_id": 1,
-		"site_url": "https://pegasus1.pegasusgateway.com",
+		"site_url": "https://cloud.pegasusgateway.com",
 		"user_id": 86,
 		"api_token": "9e34d311fc4ad45d726ab731917554ee279bf23cfa5b148df7c30e01",
 		"tz": "UTC",

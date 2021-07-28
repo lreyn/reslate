@@ -29,7 +29,7 @@ At the core of each Pegasus site, the API is the same.  The requests are built t
 
 > `https://sitedomain.com/api`
 
-> [`https://pegasus1.pegasusgateway.com/api`](https://pegasus1.pegasusgateway.com/api)
+> [`https://cloud.pegasusgateway.com/api`](https://cloud.pegasusgateway.com/api)
 
 The base URL is the domain where the Pegasus server is hosted, in our case it's used to identify where the requests will be built from.
 
@@ -40,19 +40,19 @@ The base URL is the domain where the Pegasus server is hosted, in our case it's 
 
 > `https://sitedomain.com/api-static/docs`
 
-> [`https://pegasus1.pegasusgateway.com/api-static/docs`](https://pegasus1.pegasusgateway.com/api-static/docs)
+> [`https://cloud.pegasusgateway.com/api-static/docs`](https://cloud.pegasusgateway.com/api-static/docs)
 
 The Pegasus API reference allows you to test all the methods directly with your site, it can be found under the path `/api-static/docs`
 
 ## Demo
 
-> [API Reference Login](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Authentication-Login)
+> [API Reference Login](https://cloud.pegasusgateway.com/api-static/docs/#api-Authentication-Login)
 
 > `user: developer@digitalcomtech.com`
 
 > `pass: deV3lopErs`
 
-Throughout the guide we'll work on a Demo server called: **Pegasus1**
+Throughout the guide we'll work on a Demo server called: **cloud**
 
 The vehicles we'll work with are:
 
@@ -66,11 +66,11 @@ vehicle_id | name | imei | device | features |
 
 ## Versioning
 
-> [/api](https://pegasus1.pegasusgateway.com/api/)
+> [/api](https://cloud.pegasusgateway.com/api/)
 
 ```json
 {
-  "domain": "pegasus1.pegasusgateway.com",
+  "domain": "cloud.pegasusgateway.com",
   "name": "6.0.1-aws",
   "live-url": "https://aws-live-0.pegasusgateway.com",
   "pegasus_id": 1,
@@ -119,7 +119,7 @@ etc.
 
 ## Pagination
 
-> [`api/vehicles?set=2&page=2`](https://pegasus1.pegasusgateway.com/api/vehicles?set=2&page=2)
+> [`api/vehicles?set=2&page=2`](https://cloud.pegasusgateway.com/api/vehicles?set=2&page=2)
 
 ```json
 {

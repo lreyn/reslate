@@ -1,7 +1,7 @@
 # Trips
 
 > Request the trips for a vehicle <br>
-> <a href="https://pegasus1.pegasusgateway.com/api/trips?vehicles=45&from=2015-12-25T10:05:00&to=2015-12-25T11:00:00&fields=distance,mean_speed,duration,moving,start_time&distance=km&time=minute&speed=kph">https://pegasus1.pegasusgateway.com/api/trips?vehicles=45&from=2015-12-25T10:05:00&to=2015-12-25T11:00:00&fields=distance,mean_speed,duration,moving,start_time&distance=km&time=minute&speed=kph</a>
+> <a href="https://cloud.pegasusgateway.com/api/trips?vehicles=45&from=2015-12-25T10:05:00&to=2015-12-25T11:00:00&fields=distance,mean_speed,duration,moving,start_time&distance=km&time=minute&speed=kph">https://cloud.pegasusgateway.com/api/trips?vehicles=45&from=2015-12-25T10:05:00&to=2015-12-25T11:00:00&fields=distance,mean_speed,duration,moving,start_time&distance=km&time=minute&speed=kph</a>
 
 ```json
 [
@@ -63,7 +63,7 @@ In the near future, the trips API will support the advanced and flexible quering
 ##Fields
 
 > View the trips keys/fields and their description <br>
-> <a href="https://pegasus1.pegasusgateway.com/api/trips/keys">https://pegasus1.pegasusgateway.com/api/trips/keys</a>
+> <a href="https://cloud.pegasusgateway.com/api/trips/keys">https://cloud.pegasusgateway.com/api/trips/keys</a>
 
 ```json
 {
@@ -90,7 +90,7 @@ In the near future, the trips API will support the advanced and flexible quering
 ```
 
 > Request only the units and the type for the trip keys
-> <a href="https://pegasus1.pegasusgateway.com/api/trips/keys?data=units,type">https://pegasus1.pegasusgateway.com/api/trips/keys?data=units,type</a>
+> <a href="https://cloud.pegasusgateway.com/api/trips/keys?data=units,type">https://cloud.pegasusgateway.com/api/trips/keys?data=units,type</a>
 
 ```json
 {
@@ -114,7 +114,7 @@ Getting the resource `trips/keys` you can check for the available fields definit
 
 For this resource you can optionally request the data of interest, eg:
 
-`GET https://pegasus1.pegasusgateway.com/api/trips/keys?data=units,type`
+`GET https://cloud.pegasusgateway.com/api/trips/keys?data=units,type`
 
 The available options for the `data` parameter are:
 
@@ -129,7 +129,7 @@ When `data=none` then no data for the fields is requested and only an array of a
 
 <br>
 > View the distance, duration, ignition time, idle time and the average speed per trip <br>
-> <a href="https://pegasus1.pegasusgateway.com/api/trips?from=2016-10-17&to=2016-10-18&vehicles=598,599&fields=distance,duration,ignition,idle,mean_speed">https://pegasus1.pegasusgateway.com/api/trips?from=2016-10-17&to=2016-10-18&vehicles=598,599&fields=distance,duration,ignition,idle,mean_speed</a>
+> <a href="https://cloud.pegasusgateway.com/api/trips?from=2016-10-17&to=2016-10-18&vehicles=598,599&fields=distance,duration,ignition,idle,mean_speed">https://cloud.pegasusgateway.com/api/trips?from=2016-10-17&to=2016-10-18&vehicles=598,599&fields=distance,duration,ignition,idle,mean_speed</a>
 
 ```json
 {

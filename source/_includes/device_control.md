@@ -12,7 +12,7 @@ Everything starts with creating your own API definitions.
 
 > Model: `syrus.core.restart.model`
 
-> GET [api/dcontrol/definition/syrus.core.restart.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.core.restart.model)
+> GET [api/dcontrol/definition/syrus.core.restart.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.core.restart.model)
 
 ```json
 {
@@ -28,7 +28,7 @@ Everything starts with creating your own API definitions.
 
 > Model: `syrus.standard.hour_report.model`
 
-> GET [api/dcontrol/definition/syrus.standard.hour_report.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.standard.hour_report.model)
+> GET [api/dcontrol/definition/syrus.standard.hour_report.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.standard.hour_report.model)
 
 ```json
 {
@@ -45,7 +45,7 @@ Everything starts with creating your own API definitions.
 
 > Configuration: `syrus.standard.testing.config`
 
-> GET [api/dcontrol/definition/syrus.standard.testing.config](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.standard.testing.config)
+> GET [api/dcontrol/definition/syrus.standard.testing.config](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.standard.testing.config)
 
 ```json
 {
@@ -113,7 +113,7 @@ however there are some things that you need to keep in mind:
 
 ### Permissions 
 
-> GET [api/dcontrol/access](https://pegasus1.pegasusgateway.com/api/dcontrol/access)
+> GET [api/dcontrol/access](https://cloud.pegasusgateway.com/api/dcontrol/access)
 
 ```json
 {
@@ -157,7 +157,7 @@ means you can edit definitions that start with the word `pegasus.` and `syrus.`
 
 > View all definitions
 
-> GET [api/dcontrol/definitions](https://pegasus1.pegasusgateway.com/api/dcontrol/definitions)
+> GET [api/dcontrol/definitions](https://cloud.pegasusgateway.com/api/dcontrol/definitions)
 
 ```json
 [
@@ -170,7 +170,7 @@ means you can edit definitions that start with the word `pegasus.` and `syrus.`
 
 > View definitions that start with 'syrus.core'
 
-> GET [api/dcontrol/definitions?name=syrus.core.\*](https://pegasus1.pegasusgateway.com/api/dcontrol/definitions?name=syrus.core.*)
+> GET [api/dcontrol/definitions?name=syrus.core.\*](https://cloud.pegasusgateway.com/api/dcontrol/definitions?name=syrus.core.*)
 
 ```json
 [
@@ -214,7 +214,7 @@ In order to create a model or configuration definition, we need to make a POST r
 
 > View all models
 
-> [api/dcontrol/definitions?name=*.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definitions?name=*.model)
+> [api/dcontrol/definitions?name=*.model](https://cloud.pegasusgateway.com/api/dcontrol/definitions?name=*.model)
 
 ```json
 [
@@ -228,7 +228,7 @@ In order to create a model or configuration definition, we need to make a POST r
 
 > View all models that contain the word 'gps'
 
-> [api/dcontrol/definitions?name=.*gps*.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definitions?name=.*gps*.model)
+> [api/dcontrol/definitions?name=.*gps*.model](https://cloud.pegasusgateway.com/api/dcontrol/definitions?name=.*gps*.model)
 
 ```json
 [
@@ -245,7 +245,7 @@ To view all the models you have access to, you can make a GET request to the `ap
 
 > View a particular model
 
-> [api/dcontrol/definition/syrus.acc.ecu.vin.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.acc.ecu.vin.model)
+> [api/dcontrol/definition/syrus.acc.ecu.vin.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.acc.ecu.vin.model)
 
 ```json
 {
@@ -261,7 +261,7 @@ To view all the models you have access to, you can make a GET request to the `ap
 
 > Get tracking with Ignition ON model 
 
-> [api/dcontrol/definition/pegasus.standard.tracking.ignition.on.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/pegasus.standard.tracking.ignition.on.model)
+> [api/dcontrol/definition/pegasus.standard.tracking.ignition.on.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/pegasus.standard.tracking.ignition.on.model)
 
 ```json
 {
@@ -344,7 +344,7 @@ To see a particular model you can make a request to the `api/dcontrol/definition
 
 > Create a simple model for restarting the device 
 
-> POST [api/dcontrol/definition/syrus.core.restart.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.core.restart.model)
+> POST [api/dcontrol/definition/syrus.core.restart.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.core.restart.model)
 
 ```json
 {
@@ -365,7 +365,7 @@ To see a particular model you can make a request to the `api/dcontrol/definition
 
 > Create a ulist model for creating circular regions
 
-> POST [api/dcontrol/definition/syrus.list.regions.circular.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.list.regions.circular.model)
+> POST [api/dcontrol/definition/syrus.list.regions.circular.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.list.regions.circular.model)
 
 ```json
 {
@@ -461,7 +461,7 @@ When making these paramDefs you're able to define the following additional param
 
 > Create a model for setting the camera resolution 
 
-> POST [api/dcontrol/definition/syrus.acc.photocam.resolution.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.acc.photocam.resolution.model)
+> POST [api/dcontrol/definition/syrus.acc.photocam.resolution.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.acc.photocam.resolution.model)
 
 ```json
 {
@@ -492,7 +492,7 @@ When making these paramDefs you're able to define the following additional param
 > Create a model that defines a periodic report on the device.
 > Notice how the `cmds` have a filter called '`fix`' that adds a padding to the number
 
-> POST [api/dcontrol/definition/pegasus.standard.periodic_report.ign_off.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/pegasus.standard.periodic_report.ign_off.model)
+> POST [api/dcontrol/definition/pegasus.standard.periodic_report.ign_off.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/pegasus.standard.periodic_report.ign_off.model)
 
 ```json
 {
@@ -532,7 +532,7 @@ When making these paramDefs you're able to define the following additional param
 
 > Create a model for setting the device baud rate 
 
-> POST [api/dcontrol/definition/syrus.core.baud_rate.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.core.baud_rate.model)
+> POST [api/dcontrol/definition/syrus.core.baud_rate.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.core.baud_rate.model)
 
 ```json
 {
@@ -596,7 +596,7 @@ We can pass the parameter a range or list of numbers with the `range` and `list`
 
 > Create a model for setting the device extended tags
 
-> POST [api/dcontrol/definition/pegasus.standard.extended_tags.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/pegasus.standard.extended_tags.model)
+> POST [api/dcontrol/definition/pegasus.standard.extended_tags.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/pegasus.standard.extended_tags.model)
 
 ```json
 {
@@ -626,7 +626,7 @@ The **text** type parameter definition can be used for creating a variable that 
 
 > Create a model for controlling the 1-wire accessories
 
-> POST [api/dcontrol/definition/syrus.core.one_wire_management.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.core.one_wire_management.model)
+> POST [api/dcontrol/definition/syrus.core.one_wire_management.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.core.one_wire_management.model)
 
 ```json
 {
@@ -689,7 +689,7 @@ The **numberbool** type is used for setting 1 and 0 values using `true` and `fal
 
 > Updating the tracking with Ignition ON model to include distance
 
-> PUT [api/dcontrol/definition/pegasus.standard.tracking.ignition.on.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/pegasus.standard.tracking.ignition.on.model)
+> PUT [api/dcontrol/definition/pegasus.standard.tracking.ignition.on.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/pegasus.standard.tracking.ignition.on.model)
 
 ```json
 {
@@ -766,7 +766,7 @@ To update a model you simply make a `PUT` request to the API endpoint for that m
 
 > Execute the commands in a model for a device (Single command or multiple command example)
 
-> PUT [api/dcontrol/device/:imei/model/:model_with_commands](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.core.restart.model)
+> PUT [api/dcontrol/device/:imei/model/:model_with_commands](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.core.restart.model)
 
 > `no payload`
 
@@ -776,7 +776,7 @@ To update a model you simply make a `PUT` request to the API endpoint for that m
 
 > Execute the commands in a model with a single parameter for a device
 
-> PUT [api/dcontrol/device/:imei/model/:model_with_parameters](https://pegasus1.pegasusgateway.com/api/dcontrol/device/356612021234567/model/syrus.acc.photocam.resolution.model)
+> PUT [api/dcontrol/device/:imei/model/:model_with_parameters](https://cloud.pegasusgateway.com/api/dcontrol/device/356612021234567/model/syrus.acc.photocam.resolution.model)
 
 ```json
 {
@@ -788,7 +788,7 @@ To update a model you simply make a `PUT` request to the API endpoint for that m
 
 > Execute the commands in a model with multiple parameters
 
-> PUT [api/dcontrol/device/:imei/model/:model_with_mult_parameters](https://pegasus1.pegasusgateway.com/api/dcontrol/device/356612021234567/model/syrus.tracking.turn_by_turn.model)
+> PUT [api/dcontrol/device/:imei/model/:model_with_mult_parameters](https://cloud.pegasusgateway.com/api/dcontrol/device/356612021234567/model/syrus.tracking.turn_by_turn.model)
 
 ```json
 {
@@ -801,7 +801,7 @@ To update a model you simply make a `PUT` request to the API endpoint for that m
 
 > Another example of executing commands for a model
 
-> POST [api/dcontrol/definition/syrus.core.one_wire_management.model](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.core.one_wire_management.model)
+> POST [api/dcontrol/definition/syrus.core.one_wire_management.model](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.core.one_wire_management.model)
 
 ```json
 {
@@ -845,7 +845,7 @@ Remember that a Configuration is a collection of models, and models are the inst
 
 > View all configurations
 
-> [api/dcontrol/definitions?name=*.config](https://pegasus1.pegasusgateway.com/api/dcontrol/definitions?name=*.config)
+> [api/dcontrol/definitions?name=*.config](https://cloud.pegasusgateway.com/api/dcontrol/definitions?name=*.config)
 
 ```json
 [
@@ -858,7 +858,7 @@ Remember that a Configuration is a collection of models, and models are the inst
 
 > View all configurations that start with 'pegasus.standard'
 
-> [api/dcontrol/definitions?name=pegasus.standard.*.config](https://pegasus1.pegasusgateway.com/api/dcontrol/definitions?name=pegasus.standard*.config)
+> [api/dcontrol/definitions?name=pegasus.standard.*.config](https://cloud.pegasusgateway.com/api/dcontrol/definitions?name=pegasus.standard*.config)
 
 ```json
 [
@@ -874,7 +874,7 @@ To view all the configurations you have access to, you can make a GET request to
 
 > View a particular configuration
 
-> [api/dcontrol/definition/pegasus.standard.config](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/pegasus.standard.config)
+> [api/dcontrol/definition/pegasus.standard.config](https://cloud.pegasusgateway.com/api/dcontrol/definition/pegasus.standard.config)
 
 ```json
 {
@@ -913,7 +913,7 @@ To see a particular configuration you can make a request to the `api/dcontrol/co
 
 > Create a standard custom configuration
 
-> POST [api/dcontrol/definition/pegasus.standard_custom.config](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/pegasus.standard_custom.config)
+> POST [api/dcontrol/definition/pegasus.standard_custom.config](https://cloud.pegasusgateway.com/api/dcontrol/definition/pegasus.standard_custom.config)
 
 ```json
 {
@@ -951,7 +951,7 @@ In order to create a configuration you need to make a POST request with the name
 
 > Add another model to a configuration
 
-> PUT [api/dcontrol/definition/syrus.standard_custom.config](https://pegasus1.pegasusgateway.com/api/dcontrol/definition/syrus.standard_custom.config)
+> PUT [api/dcontrol/definition/syrus.standard_custom.config](https://cloud.pegasusgateway.com/api/dcontrol/definition/syrus.standard_custom.config)
 
 ```json
 {
@@ -986,7 +986,7 @@ When doing this it will update the configuration across all devices that share t
 
 > Send a configuration to a device
 
-> PUT [api/dcontrol/device/:imei/config](https://pegasus1.pegasusgateway.com/api/dcontrol/device/356612021234567/config)
+> PUT [api/dcontrol/device/:imei/config](https://cloud.pegasusgateway.com/api/dcontrol/device/356612021234567/config)
 
 ```json
 {

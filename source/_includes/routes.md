@@ -1,6 +1,6 @@
 # Routes
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-routes)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-routes)
 
 The routes API is useful for creating paths on a map that can be used to know if an entity passed through the path and reached a set destination at any point in time. 
 Routes are comprised of 2 or more checkpoints. The first and last checkpoints are known as the origin and destination checkpoints, they are required to have a time.  The origin's time is also known as the *time of departure* and the destination time the *time of arrival*.
@@ -15,7 +15,7 @@ Multiple routes can be assigned to the same entity, and the status of multiple r
 
 > Create a route
 
-> POST [api/entities/:id/routes](https://pegasus1.pegasusgateway.com/api/entities/1673/routes)
+> POST [api/entities/:id/routes](https://cloud.pegasusgateway.com/api/entities/1673/routes)
 
 ```json
 {
@@ -53,7 +53,7 @@ Multiple routes can be assigned to the same entity, and the status of multiple r
 }
 ```
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-routes-CreateRoute)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-routes-CreateRoute)
 
 Routes are created within the [entities](?json#entities) api, POST `/entities/:id/routes`
 
@@ -93,7 +93,7 @@ Routes are created within the [entities](?json#entities) api, POST `/entities/:i
 
 > get an entities' route states
 
-> [/route_states?entities=:id](https://pegasus1.pegasusgateway.com/api/route_states?entities=1673)
+> [/route_states?entities=:id](https://cloud.pegasusgateway.com/api/route_states?entities=1673)
 
 ```json
 [
@@ -352,7 +352,7 @@ The following results are after the route is `finalized`
 
 ## Viewing routes
 
-> [/api/entities/:id/routes](https://pegasus1.pegasusgateway.com/api/entities/1673/routes)
+> [/api/entities/:id/routes](https://cloud.pegasusgateway.com/api/entities/1673/routes)
 
 ```json
 [
@@ -413,7 +413,7 @@ The following results are after the route is `finalized`
 ]
 ```
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-routes-GetRoutes)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-routes-GetRoutes)
 
 To view a list of the routes assigned to an entity you can use the `/entities/:id/routes` api
 
@@ -423,7 +423,7 @@ To view a list of the routes assigned to an entity you can use the `/entities/:i
 
 > updating a route's times (hour later)
 
-PUT [api/entities/:id/routes/:id](https://pegasus1.pegasusgateway.com/api/entities/1673/routes/18)
+PUT [api/entities/:id/routes/:id](https://cloud.pegasusgateway.com/api/entities/1673/routes/18)
 
 ```json
 {
@@ -482,7 +482,7 @@ PUT [api/entities/:id/routes/:id](https://pegasus1.pegasusgateway.com/api/entiti
 }
 ```
 
-[Reference docs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-routes-UpdateRoute)
+[Reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-routes-UpdateRoute)
 
 A route can be edited to update just about anything as long as the finalized parameter is not marked as true. 
 
@@ -497,7 +497,7 @@ To update a route go to that specific route ID for a particular entity and updat
 
 > delete a route
 
-> DELETE [api/entites/:id/routes/:id](https://pegasus1.pegasusgateway.com/api/entities/1673/routes/172)
+> DELETE [api/entites/:id/routes/:id](https://cloud.pegasusgateway.com/api/entities/1673/routes/172)
 
 When deleting a route you have to pass it the route ID. 
 <aside class="error"> 

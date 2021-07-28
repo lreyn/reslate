@@ -51,7 +51,7 @@ At the moment, forwarders can only be created by DCT, once created however, if y
 
 > dates_format
 
-> PUT [/api/forwarders/:id](https://pegasus1.pegasusgateway.com/api/forwarders/109)
+> PUT [/api/forwarders/:id](https://cloud.pegasusgateway.com/api/forwarders/109)
 
 ```json
 {
@@ -65,7 +65,7 @@ At the moment, forwarders can only be created by DCT, once created however, if y
 
 > time_zone
 
-> PUT [/api/forwarders/:id](https://pegasus1.pegasusgateway.com/api/forwarders/109)
+> PUT [/api/forwarders/:id](https://cloud.pegasusgateway.com/api/forwarders/109)
 
 ```json
 {
@@ -77,7 +77,7 @@ At the moment, forwarders can only be created by DCT, once created however, if y
 
 > keys
 
-> PUT [/api/forwarders/:id](https://pegasus1.pegasusgateway.com/api/forwarders/109)
+> PUT [/api/forwarders/:id](https://cloud.pegasusgateway.com/api/forwarders/109)
 
 ```json
 {
@@ -110,7 +110,7 @@ At the moment, forwarders can only be created by DCT, once created however, if y
 
 > extra_headers
 
-> PUT [/api/forwarders/:id](https://pegasus1.pegasusgateway.com/api/forwarders/109)
+> PUT [/api/forwarders/:id](https://cloud.pegasusgateway.com/api/forwarders/109)
 
 ```json
 {
@@ -124,7 +124,7 @@ At the moment, forwarders can only be created by DCT, once created however, if y
 
 > primary
 
-> PUT [/api/forwarders/:id](https://pegasus1.pegasusgateway.com/api/forwarders/109)
+> PUT [/api/forwarders/:id](https://cloud.pegasusgateway.com/api/forwarders/109)
 
 ```json
 {
@@ -298,7 +298,7 @@ NOTE: It is important that you make sure your logic returns an empty array `[]`.
 Once done you can test the forward here:
 [Testing the Forward](#testing-the-forward)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UdRudtYmf9Y" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/UdRudtYmf9Y" frameborder="0" allowfullscreen></iframe>
 
 ### Windows, .NET, Microsoft SQL 
 

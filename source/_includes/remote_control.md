@@ -14,7 +14,7 @@ Device control configurations are completely flexible and allow you to create yo
 
 > Get a list of the managed/legacy configurations
 
-> GET [api/configurations](https://pegasus1.pegasusgateway.com/api/configurations)
+> GET [api/configurations](https://cloud.pegasusgateway.com/api/configurations)
 
 ```json
 {
@@ -74,7 +74,7 @@ limit_remote_qpv | Limits the amount of position queries able to be sent per dev
 
 > View a particular managed configuration
 
-> GET [api/configurations/:ky](https://pegasus1.pegasusgateway.com/api/configurations/p988)
+> GET [api/configurations/:ky](https://cloud.pegasusgateway.com/api/configurations/p988)
 
 ```json
 {
@@ -148,7 +148,7 @@ tracking_resolutions | Tracking resolutions
 
 > Update the event labels of a configuration
 
-> PUT [`api/configurations/:ky`](https://pegasus1.pegasusgateway.com/api/configurations/r021)
+> PUT [`api/configurations/:ky`](https://cloud.pegasusgateway.com/api/configurations/r021)
 
 ```json
 {
@@ -162,7 +162,7 @@ tracking_resolutions | Tracking resolutions
 
 > Map the numeric codes reported by a device to labels
 
-> PUT [`api/configurations/:ky`](https://pegasus1.pegasusgateway.com/api/configurations/r021)
+> PUT [`api/configurations/:ky`](https://cloud.pegasusgateway.com/api/configurations/r021)
 
 ```json
 {
@@ -181,7 +181,7 @@ The event labels can map to codes reported by the Syrus and other devices, or co
 
 > Configure a device with a managed configuration
 
-> POST [api/device-config/:imei](https://pegasus1.pegasusgateway.com/api/device-config/350000000000001)
+> POST [api/device-config/:imei](https://cloud.pegasusgateway.com/api/device-config/350000000000001)
 
 > Body
 
@@ -205,7 +205,7 @@ The event labels can map to codes reported by the Syrus and other devices, or co
 
 > View progress of configuration on device
 
-> GET [api/devices/:imei/configuration](https://pegasus1.pegasusgateway.com/api/devices/350000000000001/configuration)
+> GET [api/devices/:imei/configuration](https://cloud.pegasusgateway.com/api/devices/350000000000001/configuration)
 
 > Response shows us the state of this configuration is pending (state: 1)
 
@@ -231,7 +231,7 @@ The event labels can map to codes reported by the Syrus and other devices, or co
 
 > View pending commands waiting to be sent to the device
 
-> GET [api/devices/:imei/messages/pending](https://pegasus1.pegasusgateway.com/api/devices/357042062922274/messages/pending)
+> GET [api/devices/:imei/messages/pending](https://cloud.pegasusgateway.com/api/devices/357042062922274/messages/pending)
 
 ```json
 {
@@ -278,7 +278,7 @@ state | description
 
 > allow command `>SRIA` (add RFID tags) on a managed configuration
 
-> PUT [api/configurations/:ky](https://pegasus1.pegasusgateway.com/api/configurations/s219)
+> PUT [api/configurations/:ky](https://cloud.pegasusgateway.com/api/configurations/s219)
 
 ```json
 {
@@ -312,7 +312,7 @@ with the `allowed_cmds` array with a new entry for the command you want to allow
 
 > View a list of remote commands to interact with a vehicle's device
 
-> GET [api/devices/:imei/remote](https://pegasus1.pegasusgateway.com/api/devices/357042062922274/remote)
+> GET [api/devices/:imei/remote](https://cloud.pegasusgateway.com/api/devices/357042062922274/remote)
 
 ```json
 {
@@ -380,7 +380,7 @@ In order to perform `GET` remote requests you need 'read' permission on `remote`
 
 > Add a new RFID tag to the device
 
-> POST [/api/devices/:imei/remote/console](https://pegasus1.pegasusgateway.com/api/devices/357042062922274/remote/console)
+> POST [/api/devices/:imei/remote/console](https://cloud.pegasusgateway.com/api/devices/357042062922274/remote/console)
 
 ```json
 {
@@ -404,7 +404,7 @@ In order to perform `GET` remote requests you need 'read' permission on `remote`
 
 > See the response of the message (command) you just sent
 
-> GET [api/devices/:imei/remote/console?cid=:cid](https://pegasus1.pegasusgateway.com/api/devices/357042062922274/remote/console?cid=460)
+> GET [api/devices/:imei/remote/console?cid=:cid](https://cloud.pegasusgateway.com/api/devices/357042062922274/remote/console?cid=460)
 
 > This response `>RER04` means that the command is not permitted, add it to [`allowed_cmds`](#allowing-a-command) in the managed configuration
 
@@ -416,7 +416,7 @@ In order to perform `GET` remote requests you need 'read' permission on `remote`
 
 > See messages (commands) pending to be sent to the device
 
-> [api/devices/:imei/messages/pending](https://pegasus1.pegasusgateway.com/api/devices/357042062922183/messages/pending)
+> [api/devices/:imei/messages/pending](https://cloud.pegasusgateway.com/api/devices/357042062922183/messages/pending)
 
 ```json
 {
@@ -449,7 +449,7 @@ In order to perform `GET` remote requests you need 'read' permission on `remote`
 
 > List all commands sent to the device
 
-> [api/devices/:imei/messages/sent](https://pegasus1.pegasusgateway.com/api/devices/357042062922183/messages/sent)
+> [api/devices/:imei/messages/sent](https://cloud.pegasusgateway.com/api/devices/357042062922183/messages/sent)
 
 ```json
 [
@@ -508,11 +508,11 @@ If using the POST <code>console</code> method Make sure the command you want to 
 
 > Safely immobilize a vehicle
 
-> POST [api/vehicles/:vid/remote/safe_immo](https://pegasus1.pegasusgateway.com/api/vehicles/123/remote/safe_immo)
+> POST [api/vehicles/:vid/remote/safe_immo](https://cloud.pegasusgateway.com/api/vehicles/123/remote/safe_immo)
 
 > or via the device api
 
-> POST [api/devices/:imei/remote/safe_immo](https://pegasus1.pegasusgateway.com/api/devices/356612021234567/remote/safe_immo)
+> POST [api/devices/:imei/remote/safe_immo](https://cloud.pegasusgateway.com/api/devices/356612021234567/remote/safe_immo)
 
 ```json
 {
@@ -535,9 +535,9 @@ If using the POST <code>console</code> method Make sure the command you want to 
 
 > you can monitor the state of the immobilization via API or Websockets
 
-> GET [api/vehicles/:vid/remote/state](https://pegasus1.pegasusgateway.com/api/devices/356612022409637/remote/state)
+> GET [api/vehicles/:vid/remote/state](https://cloud.pegasusgateway.com/api/devices/356612022409637/remote/state)
 
-> GET [api/devices?imeis=:imei&select=outbox,ios_state,safeimmo_state](https://pegasus1.pegasusgateway.com/api/devices?imeis=357042062897906&select=outbox,ios_state,safeimmo_state)
+> GET [api/devices?imeis=:imei&select=outbox,ios_state,safeimmo_state](https://cloud.pegasusgateway.com/api/devices?imeis=357042062897906&select=outbox,ios_state,safeimmo_state)
 
 ```json
 		{
@@ -573,7 +573,7 @@ Syrus devices have an immobilization mechanism that waits for certain conditions
 
 The first step in knowing whether or not safeimmo is supported by a particular device is to look for the key `safeimmo_support` in the device's configuration using the device api. 
 
-[api/devices/:imei?select=config](https://pegasus1.pegasusgateway.com/api/devices/356612022409637?select=config)
+[api/devices/:imei?select=config](https://cloud.pegasusgateway.com/api/devices/356612022409637?select=config)
 
 > Safe immobilization supported
 
@@ -626,7 +626,7 @@ After you send the command you can monitor the response via api or via websocket
 
 > Step 1: Safeimmo supported by the device's configuration 
 
-> [api/devices/:imei?select=config](https://pegasus1.pegasusgateway.com/api/devices/356612022409637?select=config)
+> [api/devices/:imei?select=config](https://cloud.pegasusgateway.com/api/devices/356612022409637?select=config)
 
 ```json
  				"safeimmo_support": true,
@@ -634,7 +634,7 @@ After you send the command you can monitor the response via api or via websocket
 
 > Step 2: Command to immobilize is sent
 
-> POST [api/devices/:imei/remote/safe_immo](https://pegasus1.pegasusgateway.com/api/devices/356612021234567/remote/safe_immo)
+> POST [api/devices/:imei/remote/safe_immo](https://cloud.pegasusgateway.com/api/devices/356612021234567/remote/safe_immo)
 
 ```json
 {
@@ -644,7 +644,7 @@ After you send the command you can monitor the response via api or via websocket
 
 > Step 3: Waiting for device to receive instruction
 
-> GET [api/devices/:imei?select=outbox,ios_state,safeimmo_state,config](https://pegasus1.pegasusgateway.com/api/devices/356612021234567?select=outbox,ios_state,safeimmo_state,config)
+> GET [api/devices/:imei?select=outbox,ios_state,safeimmo_state,config](https://cloud.pegasusgateway.com/api/devices/356612021234567?select=outbox,ios_state,safeimmo_state,config)
 
 
 ```json
@@ -666,7 +666,7 @@ After you send the command you can monitor the response via api or via websocket
 
 > Step 4: Instruction sent
 
-> GET [api/devices/:imei?select=outbox,ios_state,safeimmo_state,config](https://pegasus1.pegasusgateway.com/api/devices/356612021234567?select=outbox,ios_state,safeimmo_state,config)
+> GET [api/devices/:imei?select=outbox,ios_state,safeimmo_state,config](https://cloud.pegasusgateway.com/api/devices/356612021234567?select=outbox,ios_state,safeimmo_state,config)
 
 > outbox is empty, but the io_out1 is still not active, waiting for the instruction to be executed on the device
 
@@ -700,7 +700,7 @@ After you send the command you can monitor the response via api or via websocket
 
 > Step 5: Action executed confirming that the safe immobilization is complete
 
-> GET [api/devices/:imei?select=outbox,ios_state,safeimmo_state,config](https://pegasus1.pegasusgateway.com/api/devices/356612021234567?select=outbox,ios_state,safeimmo_state,config)
+> GET [api/devices/:imei?select=outbox,ios_state,safeimmo_state,config](https://cloud.pegasusgateway.com/api/devices/356612021234567?select=outbox,ios_state,safeimmo_state,config)
 
 ```json
 {
@@ -765,7 +765,7 @@ After you send the command you can monitor the response via api or via websocket
 
 > Activating embedded output 2 on vehicle 2063
 
-> POST [api/vehicles/2063/remote/output](https://pegasus1.pegasusgateway.com/api/vehicles/2063/remote/output)
+> POST [api/vehicles/2063/remote/output](https://cloud.pegasusgateway.com/api/vehicles/2063/remote/output)
 
 ```json
 {
@@ -777,7 +777,7 @@ After you send the command you can monitor the response via api or via websocket
 
 > Deactivating embedded output 1 on vehicle 2063
 
-> POST [api/vehicles/2063/remote/output](https://pegasus1.pegasusgateway.com/api/vehicles/2063/remote/output)
+> POST [api/vehicles/2063/remote/output](https://cloud.pegasusgateway.com/api/vehicles/2063/remote/output)
 
 ```json
 {
@@ -789,7 +789,7 @@ After you send the command you can monitor the response via api or via websocket
 
 > State of output 
 
-> GET [api/vehicles/:vid/remote/state](https://pegasus1.pegasusgateway.com/api/devices/356612022409637/remote/state)
+> GET [api/vehicles/:vid/remote/state](https://cloud.pegasusgateway.com/api/devices/356612022409637/remote/state)
 
 ```json
 {
@@ -834,7 +834,7 @@ state | Boolean | True to activate output (when an output is activated it's grou
 
 > Authorize phone number +13058675309
 
-> POST [api/devices/:imei/remote/phones](https://pegasus1.pegasusgateway.com/api/devices/357042062920955/remote/phones)
+> POST [api/devices/:imei/remote/phones](https://cloud.pegasusgateway.com/api/devices/357042062920955/remote/phones)
 
 ```json
 {
@@ -856,7 +856,7 @@ state | Boolean | True to activate output (when an output is activated it's grou
 
 > View the phone number we just configured
 
-> GET [api/devices/:imei/remote/phones](https://pegasus1.pegasusgateway.com/api/devices/357042062920955/remote/phones)
+> GET [api/devices/:imei/remote/phones](https://cloud.pegasusgateway.com/api/devices/357042062920955/remote/phones)
 
 ```json
 {
@@ -874,7 +874,7 @@ state | Boolean | True to activate output (when an output is activated it's grou
 
 > Make a call to the number +13058675309
 
-> POST https://pegasus1.pegasusgateway.com/api/vehicles/1956/remote/call
+> POST https://cloud.pegasusgateway.com/api/vehicles/1956/remote/call
 
 ```json
 {

@@ -19,7 +19,7 @@ For both of these steps you can contact your [sales representative](mailto:sales
 
 After these steps are done you'll be given an endpoint for you to send the data to, the default Pegasus 1 endpoint is:
 
-* https://pegasus1.peginstances.com/receivers/json
+* https://cloud.peginstances.com/receivers/json
 
 But yours will be different.
 
@@ -113,7 +113,7 @@ A wrong payload returns a 400 Bad Request.
 
 ### Authentication
 
-> POST [/api/assets](https://pegasus1.pegasusgateway.com/api/assets)
+> POST [/api/assets](https://cloud.pegasusgateway.com/api/assets)
 
 > creating an asset
 
@@ -154,7 +154,7 @@ A wrong payload returns a 400 Bad Request.
 
 > enabling the Taurus tracker code
 
-> PUT [/api/assets/3315](https://pegasus1.pegasusgateway.com/api/assets/3315)
+> PUT [/api/assets/3315](https://cloud.pegasusgateway.com/api/assets/3315)
 
 ```json
 {
@@ -170,7 +170,7 @@ A wrong payload returns a 400 Bad Request.
   "tracker": {
     "asset_id": 3315,
     "site_id": 1,
-    "site_url": "pegasus1.pegasusgateway.com",
+    "site_url": "cloud.pegasusgateway.com",
     "active": true,
     "token": "UTNZEHBL",
     "device": 450000141115142
@@ -181,7 +181,7 @@ A wrong payload returns a 400 Bad Request.
 
 > setting the configuration to the device
 
-> POST [/api/device-config/450000141115142](https://pegasus1.pegasusgateway.com/api/device-config/450000159088405)
+> POST [/api/device-config/450000141115142](https://cloud.pegasusgateway.com/api/device-config/450000159088405)
 
 ```json
 {
@@ -205,10 +205,10 @@ A wrong payload returns a 400 Bad Request.
 ```
 
 To get started we'll need to generate a token that we'll use to reference the asset that we want to populate data with on Pegasus Gateway.
-In order to create this token you'll have to create a new asset via the POST [/assets](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Assets-CreateAsset)
+In order to create this token you'll have to create a new asset via the POST [/assets](https://cloud.pegasusgateway.com/api-static/docs/#api-Assets-CreateAsset)
 here you can populate the asset with the included parameters such as `first_name`, `last_name`, `email`, `type` (type is required), etc.
 
-After you create the asset you'll need to activate a token for it, to do this make a PUT [/assets](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Assets-UpdateAsset) with `tracker_mode: true`.
+After you create the asset you'll need to activate a token for it, to do this make a PUT [/assets](https://cloud.pegasusgateway.com/api-static/docs/#api-Assets-UpdateAsset) with `tracker_mode: true`.
 
 This will generate a unique `token` for that particular asset that we can use to POST data to. Example token: UTNZEHBL
 
@@ -317,7 +317,7 @@ in2off | Input 2 OFF
 in3on | Input 3 ON
 in3off | Input 3 OFF
 
-For a full list of the core labels please check out the core labels api: [`api/core_labels`](https://pegasus1.pegasusgateway.com/api/core_labels?auth=06e06ce41fea91c5cb75b471271e95cbe7ce77cd8cd2f45d4f097abe)
+For a full list of the core labels please check out the core labels api: [`api/core_labels`](https://cloud.pegasusgateway.com/api/core_labels?auth=06e06ce41fea91c5cb75b471271e95cbe7ce77cd8cd2f45d4f097abe)
 
 Please note that if the `use_server_time` is not set, the server-side timestamp will be assigned to uploaded data!
 

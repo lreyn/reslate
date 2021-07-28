@@ -53,7 +53,7 @@ We encapsulate the resample and field selection parameters since we are focused 
 
 ## Introduction
 
-> [api/counters](https://pegasus1.pegasusgateway.com/api/counters)
+> [api/counters](https://cloud.pegasusgateway.com/api/counters)
 
 ```json
 {
@@ -146,7 +146,7 @@ The counters API supports two main use cases.
 
 > Total counter values for month of November
 
-> [api/counters?vehicles=2600&from=2018-11-01T00:00:00&to=2018-11-30T23:59:59](https://pegasus1.pegasusgateway.com/api/counters?vehicles=197&from=2018-11-01T00:00:00&to=2018-11-30T23:59:59)
+> [api/counters?vehicles=2600&from=2018-11-01T00:00:00&to=2018-11-30T23:59:59](https://cloud.pegasusgateway.com/api/counters?vehicles=197&from=2018-11-01T00:00:00&to=2018-11-30T23:59:59)
 
 ```json
 {
@@ -201,7 +201,7 @@ Notice that the <strong>from</strong> and <strong>to</strong> times are the clos
 ## Fragmented changes
 
 > Daily counters requests for the past 30 Days<br>
-> [api/counters?vehicles=2600&duration=P30D&delta=1D](https://pegasus1.pegasusgateway.com/api/counters?vehicles=2600&duration=P30D&delta=1D)
+> [api/counters?vehicles=2600&duration=P30D&delta=1D](https://cloud.pegasusgateway.com/api/counters?vehicles=2600&duration=P30D&delta=1D)
 
 ```json
 {
@@ -288,7 +288,7 @@ The counters mantained by pegasus are absolute, meaning they always increase. In
 ### Global vehicle counters
 
 > Global vehicle counters for vehicle 1716 <br>
-> [api/vehicles/1716/counters](https://pegasus1.pegasusgateway.com/api/vehicles/1716/counters)
+> [api/vehicles/1716/counters](https://cloud.pegasusgateway.com/api/vehicles/1716/counters)
 
 ```json
 {
@@ -326,7 +326,7 @@ The counters mantained by pegasus are absolute, meaning they always increase. In
 
 > Updating the global vehicle dev_dist (odometer) counter for vehicle 1716
 
-> `PUT` [api/vehicles/197/counters](https://pegasus1.pegasusgateway.com/api/vehicles/197/counters)
+> `PUT` [api/vehicles/197/counters](https://cloud.pegasusgateway.com/api/vehicles/197/counters)
 
 ```json
 {
@@ -397,7 +397,7 @@ Only gateway administrators and those with "w" scopes on "vehicles.counters" can
 ## Shared User Counters
 
 > Get the shared user counters for a particular vehicle
-> [api/vehicles/197/counters](https://pegasus1.pegasusgateway.com/api/vehicles/197/counters)
+> [api/vehicles/197/counters](https://cloud.pegasusgateway.com/api/vehicles/197/counters)
 
 ```json
 {
@@ -430,7 +430,7 @@ These counters exist only in this API, the idea here is that once you create the
 ### Create 
 
 > Create a shared counter that starts counting distance starting at 123 from the moment it's created<br>
-> `POST` [api/vehicles/197/counters](https://pegasus1.pegasusgateway.com/api/vehicles/197/counters)
+> `POST` [api/vehicles/197/counters](https://cloud.pegasusgateway.com/api/vehicles/197/counters)
 
 ```json
 {

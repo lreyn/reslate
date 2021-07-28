@@ -1,6 +1,6 @@
 # Labels
 
-> [/api/core_labels](https://pegasus1.pegasusgateway.com/api/core_labels)
+> [/api/core_labels](https://cloud.pegasusgateway.com/api/core_labels)
 
 ```json
 {
@@ -24,7 +24,7 @@
 
 ```
 
-> [/api/labels](https://pegasus1.pegasusgateway.com/api/labels)
+> [/api/labels](https://cloud.pegasusgateway.com/api/labels)
 
 ```json
 {
@@ -82,17 +82,17 @@ There are two types of labels: core, and site labels.
 
 * `Site labels` are labels that gateway administrators can create, edit and delete.
 
-Core labels can be accessed via [api/core_labels](https://pegasus1.pegasusgateway.com/api/core_labels). The description of these labels can be updated from the `/labels` api, but core labels cannot be deleted.
+Core labels can be accessed via [api/core_labels](https://cloud.pegasusgateway.com/api/core_labels). The description of these labels can be updated from the `/labels` api, but core labels cannot be deleted.
 
-Site labels along with core labels can be accessed via [api/labels](https://pegasus1.pegasusgateway.com/api/labels). 
+Site labels along with core labels can be accessed via [api/labels](https://cloud.pegasusgateway.com/api/labels). 
 
 ### Methods
 
 The methods to modify the labels can be found here:
 
-* [Create](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Labels-CreateLabels)
-* [Update](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Labels-UpdateLabels)
-* [Delete](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Labels-DeleteLabels)
+* [Create](https://cloud.pegasusgateway.com/api-static/docs/#api-Labels-CreateLabels)
+* [Update](https://cloud.pegasusgateway.com/api-static/docs/#api-Labels-UpdateLabels)
+* [Delete](https://cloud.pegasusgateway.com/api-static/docs/#api-Labels-DeleteLabels)
 
 ### Common labels
 

@@ -6,7 +6,7 @@ There are two reversegeo APIs, the first one is `/api/reversegeo` this one retur
 
 ### GET 
 
-> [api/reversegeo?lat=25.78362&lon=-80.293265&zones=true](https://pegasus.pegasusgateway.com/api/reversegeo?lat=25.78362&lon=-80.293265&auth=af6193706622132cbc4f3c58e23ddbfba0b57ac6feaa292469608455)
+> [api/reversegeo?lat=25.78362&lon=-80.293265&zones=true](https://cloud.pegasusgateway.com/api/reversegeo?lat=25.78362&lon=-80.293265&auth=af6193706622132cbc4f3c58e23ddbfba0b57ac6feaa292469608455)
 
 ```json
 {
@@ -42,7 +42,7 @@ URL params | description
 
 > multiple lat lon pairs
 
-> [api/reversegeo](https://pegasus1.pegasusgateway.com/api/reversegeo)
+> [api/reversegeo](https://cloud.pegasusgateway.com/api/reversegeo)
 
 ```json
 [

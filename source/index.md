@@ -8,7 +8,7 @@ language_tabs:
 
 toc_footers:
   - <a href='https://github.com/dctdevelop/pegasus'>Github</a>
-  - <a href='https://pegasus1.pegasusgateway.com/api-static/docs'>API Reference</a>
+  - <a href='https://cloud.pegasusgateway.com/api-static/docs'>API Reference</a>
 
 includes:
   - intro.md

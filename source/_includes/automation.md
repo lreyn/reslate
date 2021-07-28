@@ -2,7 +2,7 @@
 
 > Trigger categories
 
-> **GET** [/api/resources/triggers/structure](https://pegasus1.pegasusgateway.com/api/resources/triggers/structure)
+> **GET** [/api/resources/triggers/structure](https://cloud.pegasusgateway.com/api/resources/triggers/structure)
 
 ```json
 {
@@ -72,7 +72,7 @@ The combination of one or more rules and any subsequent action performed is call
 
 > Trigger operators
 
-> **GET** [/api/resources/triggers/rules](https://pegasus1.pegasusgateway.com/api/resources/triggers/rules)
+> **GET** [/api/resources/triggers/rules](https://cloud.pegasusgateway.com/api/resources/triggers/rules)
 
 ```json
 {
@@ -104,8 +104,8 @@ To create a **vehicle_events** trigger the structure shows that we can use any o
 
 __rules__ is an array of objects that represent the conditions for firing the trigger, they consist of:
 
-* **key** (from [rule_keys](https://pegasus1.pegasusgateway.com/api/resources/triggers/structure))
-* **operator** (from [standard and special](https://pegasus1.pegasusgateway.com/api/resources/triggers/rules))
+* **key** (from [rule_keys](https://cloud.pegasusgateway.com/api/resources/triggers/structure))
+* **operator** (from [standard and special](https://cloud.pegasusgateway.com/api/resources/triggers/rules))
 * **value** (value for the rule)
 * **id** (name of the rule)
 
@@ -122,7 +122,7 @@ Example that's true when the [label](#labels) reported by the device is `idl` (I
 
 > __Step 1__: Create an empty trigger with: name, type, and category
 
-> **POST** [/api/triggers](https://pegasus1.pegasusgateway.com/api/triggers)
+> **POST** [/api/triggers](https://cloud.pegasusgateway.com/api/triggers)
 
 ```json
 {
@@ -140,7 +140,7 @@ Example that's true when the [label](#labels) reported by the device is `idl` (I
 > __Step 2__: Create the rule(s) for activating the trigger
 > Triggers can contain multiple rules, although in most cases a few will suffice.
 
-> **PUT** [/api/triggers/:id](https://pegasus1.pegasusgateway.com/api/triggers/123)
+> **PUT** [/api/triggers/:id](https://cloud.pegasusgateway.com/api/triggers/123)
 
 ```json
 {
@@ -175,7 +175,7 @@ Example that's true when the [label](#labels) reported by the device is `idl` (I
 
 > When only 1 rule is used, the postfix just needs the name of the ID used on the trigger rule.
 
-> **PUT** [/api/triggers/:id](https://pegasus1.pegasusgateway.com/api/triggers/123)
+> **PUT** [/api/triggers/:id](https://cloud.pegasusgateway.com/api/triggers/123)
 
 ```json
 {
@@ -206,7 +206,7 @@ Example that's true when the [label](#labels) reported by the device is `idl` (I
 
 > __Step 4__: Assign the vehicles or groups that will be applied to the trigger
 
-> **PUT** [/api/triggers/:id](https://pegasus1.pegasusgateway.com/api/triggers/123)
+> **PUT** [/api/triggers/:id](https://cloud.pegasusgateway.com/api/triggers/123)
 
 ```json
 {
@@ -236,11 +236,11 @@ Example that's true when the [label](#labels) reported by the device is `idl` (I
 }
 ```
 
-> __Step 5__: Verify that the trigger generated reaches the [trigger logs](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Triggers-GetTriggerLogs)
+> __Step 5__: Verify that the trigger generated reaches the [trigger logs](https://cloud.pegasusgateway.com/api-static/docs/#api-Triggers-GetTriggerLogs)
 
 > Make sure the conditions are met and check the trigger logs api for results, you can use the `full` param to see all the details of the trigger generated
 
-> **GET** [/api/trigger_logs?from=2020-06-01&triggers=123&full=1](https://pegasus1.pegasusgateway.com/api/trigger_logs?from=2020-12-25T00:00:00&triggers=123)
+> **GET** [/api/trigger_logs?from=2020-06-01&triggers=123&full=1](https://cloud.pegasusgateway.com/api/trigger_logs?from=2020-12-25T00:00:00&triggers=123)
 
 ```json
 {

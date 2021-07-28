@@ -3,7 +3,7 @@
 > Normal login
 
 ```shell
-curl -X POST https://pegasus1.pegasusgateway.com/api/login \
+curl -X POST https://cloud.pegasusgateway.com/api/login \
     --header 'Content-Type: application/json' \
     -d '{"username":"developer@digitalcomtech.com",
         "password":"deV3lopErs"}'
@@ -14,7 +14,7 @@ curl -X POST https://pegasus1.pegasusgateway.com/api/login \
 > Infinite token login
 
 ```shell
-curl -X POST https://pegasus1.pegasusgateway.com/api/login \
+curl -X POST https://cloud.pegasusgateway.com/api/login \
     --header 'Content-Type: application/json' \
     -d '{"username":"developer@digitalcomtech.com",
         "password":"deV3lopErs", "scheme": "infinite"}'
@@ -22,7 +22,7 @@ curl -X POST https://pegasus1.pegasusgateway.com/api/login \
 {"message":"User successfully authenticated","app":null,"auth":"7ebbd199ecb10a156bdc189d3e0cd8ad9f9b676979deaaadca3612c0"}
 ```
 
-> **POST** [api/login](https://pegasus1.pegasusgateway.com/api/login)
+> **POST** [api/login](https://cloud.pegasusgateway.com/api/login)
 
 > Body 
 
@@ -66,7 +66,7 @@ When sending JSON make sure you use the following <b style="color:#005596">Conte
 
 > View tokens you have created
 
-> [`api/user/sessions`](https://pegasus1.pegasusgateway.com/api/user/sessions)
+> [`api/user/sessions`](https://cloud.pegasusgateway.com/api/user/sessions)
 
 ```json
 {
@@ -110,7 +110,7 @@ app_scheme | pegasus application use only
 > Create a scoped API token
 
 ```shell
-curl -X POST https://pegasus1.pegasusgateway.com/api/user/sessions \
+curl -X POST https://cloud.pegasusgateway.com/api/user/sessions \
     --header 'Content-Type: application/json' \
     --header 'Authenticate: 7ebbd199ecb10a156bdc189d3e0cd8ad9f9b676979deaaadca3612c0' \
     -d '{"scheme":"infinite","app":"myApp","scopes":"groups=285&write=remote.output,tasks"}'
@@ -119,7 +119,7 @@ curl -X POST https://pegasus1.pegasusgateway.com/api/user/sessions \
 > Remove a token
 
 ```shell
-curl https://pegasus1.pegasusgateway.com/api/logout?auth=640c59b1df21aed608fe9cb775d56faaea9e33dd74730e31a94456e2 \
+curl https://cloud.pegasusgateway.com/api/logout?auth=640c59b1df21aed608fe9cb775d56faaea9e33dd74730e31a94456e2 \
     --header 'Content-Type: application/json'
 
 {"message": "Session terminated"}
@@ -128,7 +128,7 @@ curl https://pegasus1.pegasusgateway.com/api/logout?auth=640c59b1df21aed608fe9cb
 
 ## Scopes
 
-> [api/user](https://pegasus1.pegasusgateway.com/api/user)
+> [api/user](https://cloud.pegasusgateway.com/api/user)
 
 ```json
 {

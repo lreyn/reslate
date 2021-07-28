@@ -8,7 +8,7 @@ If you are looking for installation guides and more general information about th
 
 > Daily event count for Speeding, Left Turn Signal, Right Turn Signal and Headway Warning
 
-> [api/rawdata?vehicles=1477&from=2016-10-15&to=2016-10-18T23:59:59&fields=$basic,count:1&labels=mblyspd,mblylftsig,mblyrghsig,mblyhdwrn,mblypddng&resample=event_time&freq=1D&how=count:sum&group_by=label](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1477&from=2016-10-15&to=2016-10-18T23:59:59&fields=$basic,count:1&labels=mblyspd,mblylftsig,mblyrghsig,mblyhdwrn,mblypddng&resample=event_time&freq=1D&how=count:sum&group_by=label)
+> [api/rawdata?vehicles=1477&from=2016-10-15&to=2016-10-18T23:59:59&fields=$basic,count:1&labels=mblyspd,mblylftsig,mblyrghsig,mblyhdwrn,mblypddng&resample=event_time&freq=1D&how=count:sum&group_by=label](https://cloud.pegasusgateway.com/api/rawdata?vehicles=1477&from=2016-10-15&to=2016-10-18T23:59:59&fields=$basic,count:1&labels=mblyspd,mblylftsig,mblyrghsig,mblyhdwrn,mblypddng&resample=event_time&freq=1D&how=count:sum&group_by=label)
 
 ```json
 {
@@ -110,7 +110,7 @@ Forward Proximity Warning | Notifies the driver when there is a vehicle existing
 
 > PUT `api/:bt_tags_mac`
 
-> PUT [api/bt_tags/00:07:80:EA:B9:8C](https://pegasus1.pegasusgateway.com/api/bt_tags/00:07:80:EA:B9:8C)
+> PUT [api/bt_tags/00:07:80:EA:B9:8C](https://cloud.pegasusgateway.com/api/bt_tags/00:07:80:EA:B9:8C)
 
 ```json
 {
@@ -130,7 +130,7 @@ In order to associate a Bluetooth tag to an asset you must make a PUT request to
 
 > GET Bluetooth tag data
 
-> GET [api/rawdata?vehicles=2050&fields=$bttag&duration=P1D&filter=btt_battery>0](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=2050&fields=$bttag&duration=P1D&filter=btt_battery>0)
+> GET [api/rawdata?vehicles=2050&fields=$bttag&duration=P1D&filter=btt_battery>0](https://cloud.pegasusgateway.com/api/rawdata?vehicles=2050&fields=$bttag&duration=P1D&filter=btt_battery>0)
 
 ```json
 {
@@ -204,15 +204,15 @@ The photocam can be accessed under the plugins namespace, the interaction happen
 
 > All photocam methods
 
-> [`/api/vehicles/:vid/plugins/photocam`](https://pegasus1.pegasusgateway.com/api/vehicles/1956/plugins/photocam)
+> [`/api/vehicles/:vid/plugins/photocam`](https://cloud.pegasusgateway.com/api/vehicles/1956/plugins/photocam)
 
-> [`/api/devices/:imei/plugins/photocam`](https://pegasus1.pegasusgateway.com/api/devices/357042062920955/plugins/photocam)
+> [`/api/devices/:imei/plugins/photocam`](https://cloud.pegasusgateway.com/api/devices/357042062920955/plugins/photocam)
 
 ### Capturing a photo
 
 > Capture a photo from the camera connected to vehicle id: 1956<br>
 
-> [api/vehicles/1956/plugins/photocam/capture](https://pegasus1.pegasusgateway.com/api/vehicles/1956/plugins/photocam/capture)
+> [api/vehicles/1956/plugins/photocam/capture](https://cloud.pegasusgateway.com/api/vehicles/1956/plugins/photocam/capture)
 
 ```json
 {
@@ -238,7 +238,7 @@ When the photo is taken it will take some time to upload it, at this point you c
 ### Getting the last photo
 
 > Requesting the last photo taken from a vehicle with 1 camera connected<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/vehicles/397/plugins/photocam/last">https://pegasus1.pegasusgateway.com/api/vehicles/397/plugins/photocam/last</a>
+> <a href="https://cloud.pegasusgateway.com/api/vehicles/397/plugins/photocam/last">https://cloud.pegasusgateway.com/api/vehicles/397/plugins/photocam/last</a>
 
 ```json
 {
@@ -249,7 +249,7 @@ When the photo is taken it will take some time to upload it, at this point you c
 ```
 
 > after some seconds you will see the following response<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/vehicles/397/plugins/photocam/last">https://pegasus1.pegasusgateway.com/api/vehicles/397/plugins/photocam/last</a>
+> <a href="https://cloud.pegasusgateway.com/api/vehicles/397/plugins/photocam/last">https://cloud.pegasusgateway.com/api/vehicles/397/plugins/photocam/last</a>
 
 ```json
 {
@@ -278,7 +278,7 @@ When the photo is taken it will take some time to upload it, at this point you c
 ```
 
 > Requesting the last photo taken from a vehicle with 3 cameras connected<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/vehicles/469/plugins/photocam/last">https://pegasus1.pegasusgateway.com/api/vehicles/469/plugins/photocam/last</a>
+> <a href="https://cloud.pegasusgateway.com/api/vehicles/469/plugins/photocam/last">https://cloud.pegasusgateway.com/api/vehicles/469/plugins/photocam/last</a>
 
 ```json
 {
@@ -330,7 +330,7 @@ you can also use a website such as:
 ### Browsing photos
 
 > Browse photos<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/vehicles/469/plugins/photocam/browse?_from=2016-05-11&_to=2016-05-12">https://pegasus1.pegasusgateway.com/api/vehicles/469/plugins/photocam/browse?_from=2016-05-11&_to=2016-05-12</a>
+> <a href="https://cloud.pegasusgateway.com/api/vehicles/469/plugins/photocam/browse?_from=2016-05-11&_to=2016-05-12">https://cloud.pegasusgateway.com/api/vehicles/469/plugins/photocam/browse?_from=2016-05-11&_to=2016-05-12</a>
 
 ```json
 [
@@ -383,7 +383,7 @@ With this ID we can use the `from_event` method to obtain the photo from this ev
 
 > Requesting the photos associated to the event id: 5008241019
 
-> [api/vehicles/469/plugins/photocam/from_event?event=5008241019&time=2016-05-11](https://pegasus1.pegasusgateway.com/api/vehicles/469/plugins/photocam/from_event?event=5008241019&time=2016-05-11)
+> [api/vehicles/469/plugins/photocam/from_event?event=5008241019&time=2016-05-11](https://cloud.pegasusgateway.com/api/vehicles/469/plugins/photocam/from_event?event=5008241019&time=2016-05-11)
 
 ```json
 {
@@ -416,7 +416,7 @@ With this ID we can use the `from_event` method to obtain the photo from this ev
 ```
 
 > Requesting a photo from a camera that has an error <br>
-> [`/api/vehicles/617/plugins/photocam/from_event?event=5013893009&time=2016-09-26`](https://pegasus1.pegasusgateway.com/api/vehicles/617/plugins/photocam/from_event?event=5013893009&time=2016-09-26)
+> [`/api/vehicles/617/plugins/photocam/from_event?event=5013893009&time=2016-09-26`](https://cloud.pegasusgateway.com/api/vehicles/617/plugins/photocam/from_event?event=5013893009&time=2016-09-26)
 
 ```json
 {
@@ -486,7 +486,7 @@ For more info please visit our [Support Site](https://support.digitalcomtech.com
 ## Driver ID
 
 > See a list of all iButtons and their associations
-> [`api/ibuttons`](https://pegasus1.pegasusgateway.com/api/ibuttons)
+> [`api/ibuttons`](https://cloud.pegasusgateway.com/api/ibuttons)
 
 ```json
 {
@@ -506,7 +506,7 @@ You can see the iButton ID associated to any asset by going into that particular
 
 
 > Associating an iButton ID to an asset
-> POST [api/ibuttons](https://pegasus1.pegasusgateway.com/api/ibuttons)
+> POST [api/ibuttons](https://cloud.pegasusgateway.com/api/ibuttons)
 
 > Payload of request, this will associate ibutton ID: `1234567890123456` to asset id: `1032`
 
@@ -518,7 +518,7 @@ You can see the iButton ID associated to any asset by going into that particular
 ```
 
 > See a particular asset's information (including iButtons associated)<br>
-> [api/assets/1032](https://pegasus1.pegasusgateway.com/api/assets/1032)
+> [api/assets/1032](https://cloud.pegasusgateway.com/api/assets/1032)
 
 ```json
 {
@@ -558,7 +558,7 @@ Allowing you to associate the events by an asset ID.
 
 
 > This rawdata request will group the resampled events by aid (asset id)<br>
-> [api/rawdata?vehicles=617,654&fields=$basic,$counters,aid&duration=P1D&filter=(valid_position and mph > 5 and comdelay < 3600 and hdop < 3)&how=$counters:diff,mph:mean&freq=1D&group_by=aid&resample=event_time](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=617,654&fields=$basic,$counters,aid&duration=P1D&filter=%28valid_position+and+mph+%3E+5+and+comdelay+%3C+3600+and+hdop+%3C+3%29&how=$counters%3Adiff,mph%3Amean&freq=1D&group_by=aid&resample=event_time)
+> [api/rawdata?vehicles=617,654&fields=$basic,$counters,aid&duration=P1D&filter=(valid_position and mph > 5 and comdelay < 3600 and hdop < 3)&how=$counters:diff,mph:mean&freq=1D&group_by=aid&resample=event_time](https://cloud.pegasusgateway.com/api/rawdata?vehicles=617,654&fields=$basic,$counters,aid&duration=P1D&filter=%28valid_position+and+mph+%3E+5+and+comdelay+%3C+3600+and+hdop+%3C+3%29&how=$counters%3Adiff,mph%3Amean&freq=1D&group_by=aid&resample=event_time)
 
 > The result is the daily values of the counters, and the average speed grouped by the asset ID<br>
 
@@ -584,7 +584,7 @@ For more information about protocols and vehicles which are compatible visit our
 The connection to the onboard computer automatically gives you access to precise vehicle metrics.  The [master fields list](#master-fields-list) gives you an idea of all the possible values obtained with the ECU monitor.
 
 > Counters API request with ecu parameters
-> [api/counters?vehicles=1716&duration=P1D&round=2&time=hour&speed=mph&distance=mile&volume=gallon](https://pegasus1.pegasusgateway.com/api/counters?vehicles=1716&duration=P1D&round=2&time=hour&speed=mph&distance=mile&volume=gallon)
+> [api/counters?vehicles=1716&duration=P1D&round=2&time=hour&speed=mph&distance=mile&volume=gallon](https://cloud.pegasusgateway.com/api/counters?vehicles=1716&duration=P1D&round=2&time=hour&speed=mph&distance=mile&volume=gallon)
 
 ```json
 {
@@ -649,7 +649,7 @@ When using the [rawdata](#rawdata) API you'll notice that you have access to all
 
 > Rawdata request with the ECU RPMs and the flag
 
-> [/api/rawdata?vehicles=1716&duration=P1D&fields=ecu_rpm,ecu_rpm_flag](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1716&duration=P1D&fields=ecu_rpm,ecu_rpm_flag)
+> [/api/rawdata?vehicles=1716&duration=P1D&fields=ecu_rpm,ecu_rpm_flag](https://cloud.pegasusgateway.com/api/rawdata?vehicles=1716&duration=P1D&fields=ecu_rpm,ecu_rpm_flag)
 
 ```json
 {
@@ -664,7 +664,7 @@ When using the [rawdata](#rawdata) API you'll notice that you have access to all
 
 > Filtered by rpm_flag = "T" (show's valid values)
 
-> [api/rawdata?vehicles=1716&duration=P1D&fields=ecu_rpm,ecu_rpm_flag&filter=(ecu_rpm_flag==%22T%22)](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1716&duration=P1D&fields=ecu_rpm,ecu_rpm_flag&filter=(ecu_rpm_flag==%22T%22))
+> [api/rawdata?vehicles=1716&duration=P1D&fields=ecu_rpm,ecu_rpm_flag&filter=(ecu_rpm_flag==%22T%22)](https://cloud.pegasusgateway.com/api/rawdata?vehicles=1716&duration=P1D&fields=ecu_rpm,ecu_rpm_flag&filter=(ecu_rpm_flag==%22T%22))
 
 ```json
 {
@@ -677,7 +677,7 @@ When using the [rawdata](#rawdata) API you'll notice that you have access to all
 }
 ```
 
-Use [`/api/resources/rawdata/keys`](https://pegasus1.pegasusgateway.com/api/resources/rawdata/keys) to get the sets of rawdata fields that are available, for example:
+Use [`/api/resources/rawdata/keys`](https://cloud.pegasusgateway.com/api/resources/rawdata/keys) to get the sets of rawdata fields that are available, for example:
 
 - $ecu
 - $ecu_advanced
@@ -723,7 +723,7 @@ As seen above, only when the flag is "T" will the ECU parameters be valid and sh
 
 > Get the ECU Monitor information for a vehicle
 
-> GET <a href="https://pegasus1.pegasusgateway.com/api/vehicles/1944/remote/ecu_state">api/vehicles/:vid/remote/ecu_state</a>
+> GET <a href="https://cloud.pegasusgateway.com/api/vehicles/1944/remote/ecu_state">api/vehicles/:vid/remote/ecu_state</a>
 
 ```json
 {
@@ -840,7 +840,7 @@ sending this request will give us all the possibilities with the lumeway accesso
 
 > Capturing a photo for a Lumeway accessory
 
-> [api/vehicles/1/plugins/photocam/capture](https://pegasus1.pegasusgateway.com/api/vehicles/1/plugins/photocam/capture)
+> [api/vehicles/1/plugins/photocam/capture](https://cloud.pegasusgateway.com/api/vehicles/1/plugins/photocam/capture)
 
 ```json
 {
@@ -872,7 +872,7 @@ Notice how the source of the image is 99, this is always the case when the photo
 
 
 > Getting the last photo <br>
-> <a href="https://pegasus1.pegasusgateway.com/api/vehicles/1/plugins/photocam/last">https://pegasus1.pegasusgateway.com/api/vehicles/1/plugins/photocam/last</a>
+> <a href="https://cloud.pegasusgateway.com/api/vehicles/1/plugins/photocam/last">https://cloud.pegasusgateway.com/api/vehicles/1/plugins/photocam/last</a>
 
 > Notice how the source is 99, this is always the case when the photos are generated from the Lumeway accessory
 
@@ -899,7 +899,7 @@ Notice how the source of the image is 99, this is always the case when the photo
 
 > after some seconds you will see the following response
 
-> <a href="https://pegasus1.pegasusgateway.com/api/vehicles/397/plugins/photocam/last">https://pegasus1.pegasusgateway.com/api/vehicles/397/plugins/photocam/last</a>
+> <a href="https://cloud.pegasusgateway.com/api/vehicles/397/plugins/photocam/last">https://cloud.pegasusgateway.com/api/vehicles/397/plugins/photocam/last</a>
 
 ```json
 
@@ -931,7 +931,7 @@ Notice how the source of the image is 99, this is always the case when the photo
 ### Browsing photos
 
 > Browse photos from any date to any date <br>
-> https://pegasus1.pegasusgateway.com/api/vehicles/1/plugins/photocam/browse?_from=2016-10-01&_to=2016-10-01T10:39:40
+> https://cloud.pegasusgateway.com/api/vehicles/1/plugins/photocam/browse?_from=2016-10-01&_to=2016-10-01T10:39:40
 
 You can use the `browse` method to see a list of events that have a photo associated to them.
 
@@ -964,7 +964,7 @@ The result gives us an object with different `id` that correspond to an event wi
 
 With the ID of the photos we just browsed, we can use the `from_event` method to carry obtain that photo
 
-> <a href="https://pegasus1.pegasusgateway.com/api/vehicles/790/plugins/photocam/browse?_from=2016-10-01&_to=2016-10-01T10:39:40">https://pegasus1.pegasusgateway.com/api/vehicles/790/plugins/photocam/browse?_from=2016-10-01&_to=2016-10-01T10:39:40</a>
+> <a href="https://cloud.pegasusgateway.com/api/vehicles/790/plugins/photocam/browse?_from=2016-10-01&_to=2016-10-01T10:39:40">https://cloud.pegasusgateway.com/api/vehicles/790/plugins/photocam/browse?_from=2016-10-01&_to=2016-10-01T10:39:40</a>
 
 ```json
 [
@@ -1026,7 +1026,7 @@ Status Code | Description |
 99 | Inactive mode or initializing.  
 
 > Requesting the photos associated to the event id: 4356063141 <br>
-> [api/vehicles/790/plugins/photocam/from_event?event=4356063141&time=2016-10-01](https://pegasus1.pegasusgateway.com/api/vehicles/790/plugins/photocam/from_event?event=4356063141&time=2016-10-01)
+> [api/vehicles/790/plugins/photocam/from_event?event=4356063141&time=2016-10-01](https://cloud.pegasusgateway.com/api/vehicles/790/plugins/photocam/from_event?event=4356063141&time=2016-10-01)
 
 ```json
 {
@@ -1077,7 +1077,7 @@ GET `/api/vehicles/:vid/plugins/garmin`
 
 > Get the methods available for the Garmin™
 
-> [api/vehicles/254/plugins/garmin](https://pegasus1.pegasusgateway.com/api/vehicles/254/plugins/garmin)
+> [api/vehicles/254/plugins/garmin](https://cloud.pegasusgateway.com/api/vehicles/254/plugins/garmin)
 
 ```json
 {
@@ -1109,7 +1109,7 @@ GET `/api/vehicles/:vid/plugins/garmin`
 
 > Get the current state of the Garmin™
 
-> [api/vehicles/254/plugins/garmin/state](https://pegasus1.pegasusgateway.com/api/vehicles/254/plugins/garmin/state)
+> [api/vehicles/254/plugins/garmin/state](https://cloud.pegasusgateway.com/api/vehicles/254/plugins/garmin/state)
 
 ```json
 {
@@ -1120,7 +1120,7 @@ GET `/api/vehicles/:vid/plugins/garmin`
 
 > Enable the Garmin™ mode
 
-> POST [/api/vehicles/254/plugins/garmin/state](https://pegasus1.pegasusgateway.com/api/vehicles/254/plugins/garmin/state)
+> POST [/api/vehicles/254/plugins/garmin/state](https://cloud.pegasusgateway.com/api/vehicles/254/plugins/garmin/state)
 
 ```json
 payload 
@@ -1151,7 +1151,7 @@ message | text to be displayed on the garmin, up to 40 characters
 
 > Send a message to the inbox on the Garmin™ device
 
-> POST [api/vehicles/254/plugins/garmin/message](https://pegasus1.pegasusgateway.com/api/vehicles/254/plugins/garmin/message)
+> POST [api/vehicles/254/plugins/garmin/message](https://cloud.pegasusgateway.com/api/vehicles/254/plugins/garmin/message)
 
 ```json
 payload 
@@ -1189,7 +1189,7 @@ _from | Retrieve messages from this date (YYYY-MM-DD) | Yes
 
 > GET messages from a Garmin
 
-> GET [`api/vehicles/254/plugins/garmin/message?_from=2017-08-03`](https://pegasus1.pegasusgateway.com/api/vehicles/254/plugins/garmin/message?_from=2017-08-03)
+> GET [`api/vehicles/254/plugins/garmin/message?_from=2017-08-03`](https://cloud.pegasusgateway.com/api/vehicles/254/plugins/garmin/message?_from=2017-08-03)
 
 ```json
 {
@@ -1244,7 +1244,7 @@ flat | Latitude
 flon | Longitude
 message | Text to be displayed on the way to the job (Up to 40 characters - ASCII)
 
-> POST [`api/vehicles/254/plugins/garmin/job`](https://pegasus1.pegasusgateway.com/api/vehicles/254/plugins/garmin/job)
+> POST [`api/vehicles/254/plugins/garmin/job`](https://cloud.pegasusgateway.com/api/vehicles/254/plugins/garmin/job)
 
 ```json
 payload 
@@ -1271,7 +1271,7 @@ payload
 ## Input/Output Expander
 
 > Rawdata request with $io_exp set<br>
-> [api/rawdata?vehicles=56&fields=$io_exp&duration=P1D&filter=io_exp_state%3E0](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=56&fields=$io_exp&duration=P1D&filter=io_exp_state%3E0)
+> [api/rawdata?vehicles=56&fields=$io_exp&duration=P1D&filter=io_exp_state%3E0](https://cloud.pegasusgateway.com/api/rawdata?vehicles=56&fields=$io_exp&duration=P1D&filter=io_exp_state%3E0)
 
 ```json
 {
@@ -1306,7 +1306,7 @@ You will have an additional 13 fields available in the rawdata api, you may use 
 ### Interacting with Outputs
 
 > Activating extended output 3 <br>
-> POST [`api/vehicles/:vid/remote/output`](https://pegasus1.pegasusgateway.com/api/vehicles/617/remote/output)
+> POST [`api/vehicles/:vid/remote/output`](https://cloud.pegasusgateway.com/api/vehicles/617/remote/output)
 
 ```json
 {
@@ -1330,7 +1330,7 @@ You will have an additional 13 fields available in the rawdata api, you may use 
 
 > View the status of the extended inputs/outputs
 
-> [api/devices/:imei?select=ios_state](https://pegasus1.pegasusgateway.com/api/devices/357042062920955?select=ios_state)
+> [api/devices/:imei?select=ios_state](https://cloud.pegasusgateway.com/api/devices/357042062920955?select=ios_state)
 
 ```json
 {
@@ -1365,7 +1365,7 @@ You will have an additional 13 fields available in the rawdata api, you may use 
 
 > View a log of the output changes<br>
 
-> [api/devices/357042062920955/remote/outputsetlog](https://pegasus1.pegasusgateway.com/api/devices/357042062920955/remote/outputsetlog)
+> [api/devices/357042062920955/remote/outputsetlog](https://cloud.pegasusgateway.com/api/devices/357042062920955/remote/outputsetlog)
 
 ```json
 [
@@ -1400,14 +1400,14 @@ You can view the changes done to the device's outputs with the
 
 GET `api/vehicles/617/remote/outputsetlog`
 
-[More info](https://pegasus1.pegasusgateway.com/api-static/docs/#api-remote-RemoteOutput)
+[More info](https://cloud.pegasusgateway.com/api-static/docs/#api-remote-RemoteOutput)
 
 
 ## Multicamera/expander
 
 > Take a photo with a device that has 3 cameras connected to it
 
-> [api/vehicles/469/plugins/photocam/capture](https://pegasus1.pegasusgateway.com/api/vehicles/469/plugins/photocam/capture)
+> [api/vehicles/469/plugins/photocam/capture](https://cloud.pegasusgateway.com/api/vehicles/469/plugins/photocam/capture)
 
 ```json
 {
@@ -1421,7 +1421,7 @@ GET `api/vehicles/617/remote/outputsetlog`
 
 > Get the last photos for vehicle id: 469
 
-> [api/vehicles/469/plugins/photocam/last](https://pegasus1.pegasusgateway.com/api/vehicles/469/plugins/photocam/last)
+> [api/vehicles/469/plugins/photocam/last](https://cloud.pegasusgateway.com/api/vehicles/469/plugins/photocam/last)
 
 ```json
 {
@@ -1447,7 +1447,7 @@ GET `api/vehicles/617/remote/outputsetlog`
 
 > After some seconds
 
-> [api/vehicles/469/plugins/photocam/last](https://pegasus1.pegasusgateway.com/api/vehicles/469/plugins/photocam/last)
+> [api/vehicles/469/plugins/photocam/last](https://cloud.pegasusgateway.com/api/vehicles/469/plugins/photocam/last)
 
 ```json
 {
@@ -1600,7 +1600,7 @@ For more information about the temperature sensor please visit our [support site
 
 > Request tire data (doran example)
 
-> [api/rawdata?vehicles=1113&fields=ecu_tires_psi,ecu_tires_tmp,ecu_tpms_conditions,ecu_tpms_provision&duration=P1D&head=1](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1113&fields=ecu_tires_psi,ecu_tires_tmp,ecu_tpms_warnings,ecu_tpms_provision&duration=P1D&head=1)
+> [api/rawdata?vehicles=1113&fields=ecu_tires_psi,ecu_tires_tmp,ecu_tpms_conditions,ecu_tpms_provision&duration=P1D&head=1](https://cloud.pegasusgateway.com/api/rawdata?vehicles=1113&fields=ecu_tires_psi,ecu_tires_tmp,ecu_tpms_warnings,ecu_tpms_provision&duration=P1D&head=1)
 
 ```json
 [
@@ -1619,7 +1619,7 @@ For more information about the temperature sensor please visit our [support site
 
 > Request tire data (continental example)
 
-> [api/rawdata?vehicles=1113&fields=ecu_tires_psi,ecu_tires_tmp,ecu_tpms_warnings,ecu_tpms_provision&duration=P1D&head=1](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1113&fields=ecu_tires_psi,ecu_tires_tmp,ecu_tpms_warnings,ecu_tpms_provision&duration=P1D&head=1)
+> [api/rawdata?vehicles=1113&fields=ecu_tires_psi,ecu_tires_tmp,ecu_tpms_warnings,ecu_tpms_provision&duration=P1D&head=1](https://cloud.pegasusgateway.com/api/rawdata?vehicles=1113&fields=ecu_tires_psi,ecu_tires_tmp,ecu_tpms_warnings,ecu_tpms_provision&duration=P1D&head=1)
 
 ```json
 [

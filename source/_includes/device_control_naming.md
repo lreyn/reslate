@@ -120,7 +120,7 @@ These models are specific to an accessory.
 #### Legacy
 
 We refer to the original remote API as the Legacy Remote API.
-This API was found under the [API Documentation Reference section](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Remote). 
+This API was found under the [API Documentation Reference section](https://cloud.pegasusgateway.com/api-static/docs/#api-Remote). 
 We use this section to map the legacy API to it's equivalent in the new device Control / remote2.0 API
 
 | Legacy Remote API | Replaced With  | Description |
@@ -152,7 +152,7 @@ We use this section to map the legacy API to it's equivalent in the new device C
 
 ### Plugins
 
-The Plugins API gave you the possibility to interact with the device's accessories. We can also find this plugins API in the [API Reference Section](https://pegasus1.pegasusgateway.com/api-static/docs/#api-Plugins)
+The Plugins API gave you the possibility to interact with the device's accessories. We can also find this plugins API in the [API Reference Section](https://cloud.pegasusgateway.com/api-static/docs/#api-Plugins)
 
 | Legacy Plugins | Replaced With  | Description |
 | ----------------- | -------------- | ----------- |

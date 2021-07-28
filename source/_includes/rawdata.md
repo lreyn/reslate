@@ -42,7 +42,7 @@ The `rawdata` api has several query params that can be passed to specify the dat
 
 > Get a list of all rawdata fields
 
-> [/api/resources/rawdata/keys](https://pegasus1.pegasusgateway.com/api/resources/rawdata/keys)
+> [/api/resources/rawdata/keys](https://cloud.pegasusgateway.com/api/resources/rawdata/keys)
 
 ```json
 {
@@ -145,7 +145,7 @@ Instead of:
 In addition to selecting fields, you can rename and create new fields.
 
 > A rawdata transformation that renames rssi, latitude, and longitude<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&duration=P1D&fields=latitude:@lat,longitude:@lon,rssi:@cf_rssi,speed,head">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&duration=P1D&fields=latitude:@lat,longitude:@lon,rssi:@cf_rssi,speed,head</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&duration=P1D&fields=latitude:@lat,longitude:@lon,rssi:@cf_rssi,speed,head">https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&duration=P1D&fields=latitude:@lat,longitude:@lon,rssi:@cf_rssi,speed,head</a>
 
 ```json 
 {
@@ -176,7 +176,7 @@ You can do as many of these as you want.
 ###Building fields
 
 > Rawdata request with a simple operator<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-05&to=2018-10-09&fields=ratio:@lat/@lon,lat,lon">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-05&to=2018-10-09&fields=ratio:@lat/@lon,lat,lon</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-05&to=2018-10-09&fields=ratio:@lat/@lon,lat,lon">https://cloud.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-05&to=2018-10-09&fields=ratio:@lat/@lon,lat,lon</a>
 
 ```json
 {
@@ -191,7 +191,7 @@ You can do as many of these as you want.
 ```
 
 > Rawdata request that has more operators and manipulations<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-06&to=2018-10-07&fields=kph:@speed,mph,vehicle_battery_volts:@ecu_battery/1000,communication_delay:(@system_epoch-@event_epoch),centimeters_per_second:@mph*44.704,speed_in_knots:@mph*0.868976">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-06&to=2018-10-07&fields=kph:@speed,mph,vehicle_battery_volts:@ecu_battery/1000,communication_delay:(@system_epoch-@event_epoch),centimeters_per_second:@mph*44.704,speed_in_knots:@mph*0.868976</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-06&to=2018-10-07&fields=kph:@speed,mph,vehicle_battery_volts:@ecu_battery/1000,communication_delay:(@system_epoch-@event_epoch),centimeters_per_second:@mph*44.704,speed_in_knots:@mph*0.868976">https://cloud.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-06&to=2018-10-07&fields=kph:@speed,mph,vehicle_battery_volts:@ecu_battery/1000,communication_delay:(@system_epoch-@event_epoch),centimeters_per_second:@mph*44.704,speed_in_knots:@mph*0.868976</a>
 
 ```json
 {
@@ -245,7 +245,7 @@ Example:
 
 Note that the `+` sign is URL encoded in the request as `%2B`, this is required in order for the parser to work.
 
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=2600&duration=P1D&fields=%5B%22$basic%22,%22google:%27https://google.com/maps?q=%27%20%2B%20@lat__str%20%2B%20%27,%27%20%2B%20@lon__str%22%5D&distance=km&volume=liter&time=second&speed=kph&order=vid,event_time,system_time&tz=America/New_York">/rawdata?vehicles=2600&duration=P1D&fields=%5B%22$basic%22,%22google:%27https://google.com/maps?q=%27%20%2B%20@lat__str%20%2B%20%27,%27%20%2B%20@lon__str%22%5D&distance=km&volume=liter&time=second&speed=kph&order=vid,event_time,system_time&tz=America/New_York</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=2600&duration=P1D&fields=%5B%22$basic%22,%22google:%27https://google.com/maps?q=%27%20%2B%20@lat__str%20%2B%20%27,%27%20%2B%20@lon__str%22%5D&distance=km&volume=liter&time=second&speed=kph&order=vid,event_time,system_time&tz=America/New_York">/rawdata?vehicles=2600&duration=P1D&fields=%5B%22$basic%22,%22google:%27https://google.com/maps?q=%27%20%2B%20@lat__str%20%2B%20%27,%27%20%2B%20@lon__str%22%5D&distance=km&volume=liter&time=second&speed=kph&order=vid,event_time,system_time&tz=America/New_York</a>
 
 
 <aside class="notice">
@@ -262,7 +262,7 @@ Simply append one of
 
 > Rawdata request that casts the speed as a string
 
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-05&to=2018-10-09&fields=speed_as_string:@speed__str,speed&speed=kph">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-05&to=2018-10-09&fields=speed_as_string:@speed__str,speed&speed=kph</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-05&to=2018-10-09&fields=speed_as_string:@speed__str,speed&speed=kph">https://cloud.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-05&to=2018-10-09&fields=speed_as_string:@speed__str,speed&speed=kph</a>
 
 ```json
 {
@@ -283,7 +283,7 @@ You may run into some issues with variable types mismatching, we provide a metho
 
 > Results in the daily total hours with the engine on, distance traveled, last location, etc.
 
-> [api/rawdata?vehicles=1673&fields=\["DATE_LAST_REPORTED...](https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1673&fields=%5B%22DATE_LAST_REPORTED:@event_time%22,%22LAST_LAT:@lat%22,%22LAST_LON:@lon%22,%22HOURS_OF_OPERATION:@dev_ign.round(1)%22,%22HOURS_IDLING:@dev_idle.round(1)%22,%22DISTANCE_TRAVELED_KM:@dev_dist.round(1)%22,%22LOCATION:%27https://google.com/maps?q=%27%20%2B%20@lat__str%20%2B%20%27,%27%20%2B%20@lon__str%22%5D&duration=P1D&tz=America/Santiago&resample=event_time&how=HOURS_OF_OPERATION:diff,HOURS_IDLING:diff,DISTANCE_TRAVELED_KM:diff,LAST_LAT:last,LAST_LON:last,DATE_LAST_REPORTED:last,LOCATION:last&group_by=vid&freq=1D&time=hour&distance=km&head=10)
+> [api/rawdata?vehicles=1673&fields=\["DATE_LAST_REPORTED...](https://cloud.pegasusgateway.com/api/rawdata?vehicles=1673&fields=%5B%22DATE_LAST_REPORTED:@event_time%22,%22LAST_LAT:@lat%22,%22LAST_LON:@lon%22,%22HOURS_OF_OPERATION:@dev_ign.round(1)%22,%22HOURS_IDLING:@dev_idle.round(1)%22,%22DISTANCE_TRAVELED_KM:@dev_dist.round(1)%22,%22LOCATION:%27https://google.com/maps?q=%27%20%2B%20@lat__str%20%2B%20%27,%27%20%2B%20@lon__str%22%5D&duration=P1D&tz=America/Santiago&resample=event_time&how=HOURS_OF_OPERATION:diff,HOURS_IDLING:diff,DISTANCE_TRAVELED_KM:diff,LAST_LAT:last,LAST_LON:last,DATE_LAST_REPORTED:last,LOCATION:last&group_by=vid&freq=1D&time=hour&distance=km&head=10)
 
 ```json
 {
@@ -317,7 +317,7 @@ You may run into some issues with variable types mismatching, we provide a metho
 ## Filtering
 
 > Rawdata request filtered by events with valid positions<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-30T08:00:00&to=2018-10-30T23:59:59&fields=mph,valid_position&filter=valid_position">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-30T08:00:00&to=2018-10-30T23:59:59&fields=mph,valid_position&filter=valid_position</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-30T08:00:00&to=2018-10-30T23:59:59&fields=mph,valid_position&filter=valid_position">https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-30T08:00:00&to=2018-10-30T23:59:59&fields=mph,valid_position&filter=valid_position</a>
 
 ```json
 {
@@ -331,7 +331,7 @@ You may run into some issues with variable types mismatching, we provide a metho
 ```
 
 > Rawdata request filtered by events with valid positions and mph > 30<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-30T08:00:00&to=2018-10-30T23:59:59&fields=mph,valid_position&filter=valid_position+and+mph+%3E+30">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-30T08:00:00&to=2018-10-30T23:59:59&fields=mph,valid_position&filter=valid_position+and+mph>30</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-30T08:00:00&to=2018-10-30T23:59:59&fields=mph,valid_position&filter=valid_position+and+mph+%3E+30">https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-30T08:00:00&to=2018-10-30T23:59:59&fields=mph,valid_position&filter=valid_position+and+mph>30</a>
 
 ```json
 {
@@ -345,7 +345,7 @@ You may run into some issues with variable types mismatching, we provide a metho
 ```
 
 > Rawdata request with a filter that shows events after 8 with speeds greater than 20 and valid positions<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-10T00:00:00&to=2018-10-11T23:59:59&fields=mph,valid_position,event_hour&filter=event_hour%3E8+and+(speed+%3E+20+and+valid_position)">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-10T08:00:00&to=2018-10-11T23:59:59&fields=mph,valid_position,event_hour&filter=system_hour>8+and+(speed>20+and+valid_position)</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-10T00:00:00&to=2018-10-11T23:59:59&fields=mph,valid_position,event_hour&filter=event_hour%3E8+and+(speed+%3E+20+and+valid_position)">https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&from=2018-10-10T08:00:00&to=2018-10-11T23:59:59&fields=mph,valid_position,event_hour&filter=system_hour>8+and+(speed>20+and+valid_position)</a>
 
 ```json
 {
@@ -396,7 +396,7 @@ Whenever making analysis of data it's recommended that you use the following fil
 You can further filter by looking at individual event codes generated, event codes depend on the managed configuration of the device.
 
 > Rawdata request of only event codes 4 and 47
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-09-30T08:00:00&to=2018-09-30T23:59:59&fields=$basic&filter=speed+%3E+10&codes=4,47">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-09-30T08:00:00&to=2018-09-30T23:59:59&fields=$basic&filter=speed+%3E+10&codes=4,47</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-09-30T08:00:00&to=2018-09-30T23:59:59&fields=$basic&filter=speed+%3E+10&codes=4,47">https://cloud.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-09-30T08:00:00&to=2018-09-30T23:59:59&fields=$basic&filter=speed+%3E+10&codes=4,47</a>
 
 ```json
 {
@@ -424,7 +424,7 @@ You can further filter by looking at individual event codes generated, event cod
 ### Label
 
 > GET labels
-> [api/labels](https://pegasus1.pegasusgateway.com/api/labels)
+> [api/labels](https://cloud.pegasusgateway.com/api/labels)
 
 ```json
 {
@@ -445,7 +445,7 @@ Filtering by labels allows you ask for all the specific events across your fleet
 For more information about labels please visit: [labels](#labels)
 
 > Rawdata request from group 500 with speeding and aggressive lane change events 
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?groups=500&from=2018-09-30T08:00:00&to=2018-09-30T23:59:59&fields=$basic&filter=speed+%3E+10&labels=agglnchng,spd">https://pegasus1.pegasusgateway.com/api/rawdata?groups=500&from=2018-09-30T08:00:00&to=2018-09-30T23:59:59&fields=$basic&filter=speed>10&labels=agglnchng,spd</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?groups=500&from=2018-09-30T08:00:00&to=2018-09-30T23:59:59&fields=$basic&filter=speed+%3E+10&labels=agglnchng,spd">https://cloud.pegasusgateway.com/api/rawdata?groups=500&from=2018-09-30T08:00:00&to=2018-09-30T23:59:59&fields=$basic&filter=speed>10&labels=agglnchng,spd</a>
 
 ```json
 {
@@ -471,7 +471,7 @@ For more information about labels please visit: [labels](#labels)
 ### <a name="data_types">Types</a>
 
 > Rawdata request for maximum speed (metric==2) in driving metric events (types=12)<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-01T00:00:00&to=2018-10-10T23:59:59&fields=metric,metric_value&filter=metric==2&order=metric&types=12&speed=mph">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-01T00:00:00&to=2018-10-10T23:59:59&fields=metric,metric_value&filter=metric==2&order=metric&types=12&speed=mph</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-01T00:00:00&to=2018-10-10T23:59:59&fields=metric,metric_value&filter=metric==2&order=metric&types=12&speed=mph">https://cloud.pegasusgateway.com/api/rawdata?vehicles=1674&from=2018-10-01T00:00:00&to=2018-10-10T23:59:59&fields=metric,metric_value&filter=metric==2&order=metric&types=12&speed=mph</a>
 
 ```json
 {
@@ -506,7 +506,7 @@ Type |  Description |
 ## Ordering
 
 > Rawdata request ordered by code (increasing), and mph (decreasing)<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?groups=500&fields=$basic&duration=PT4H&order=code,-mph">https://pegasus1.pegasusgateway.com/api/rawdata?groups=500&fields=$basic&duration=PT4H&order=code,-mph</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?groups=500&fields=$basic&duration=PT4H&order=code,-mph">https://cloud.pegasusgateway.com/api/rawdata?groups=500&fields=$basic&duration=PT4H&order=code,-mph</a>
 
 ```json
 {
@@ -549,7 +549,7 @@ This will return all events sorted by vehicle id (vid) and then by speed in desc
 ## Limiting
 
 > Rawdata request that limits the results to the first two and last 3 events<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?groups=500&fields=$basic&duration=PT4H&order=code,-mph&filter=code%3E1%20and%20code%3C10&head=2&tail=3">https://pegasus1.pegasusgateway.com/api/rawdata?groups=500&fields=$basic&duration=PT4H&order=code,-mph&filter=code%3E1%20and%20code%3C10&head=2&tail=3</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?groups=500&fields=$basic&duration=PT4H&order=code,-mph&filter=code%3E1%20and%20code%3C10&head=2&tail=3">https://cloud.pegasusgateway.com/api/rawdata?groups=500&fields=$basic&duration=PT4H&order=code,-mph&filter=code%3E1%20and%20code%3C10&head=2&tail=3</a>
 
 ```json
 {
@@ -597,7 +597,7 @@ If the resulting set is less than the values of `head` and `tail` combined, dont
 ## Resampling
 
 > Returns the difference in all counters (max-min), resampled at 1 day intervals and grouped by vids from November 1 . This gives you the total distance traveled, ignition on time, etc. per day per vehicle <br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=617,654&fields=$counters&from=2015-11-01T00:00:00&to=2015-11-10T00:00:00&filter=(valid_position+and+hdop+<+3)&how=$counters:diff&freq=1D&group_by=vid&resample=event_time">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=617,654&fields=$counters&from=2015-11-01T00:00:00&to=2015-11-10T00:00:00&filter=(valid_position+and+hdop+<+3)&how=$counters:diff&freq=1D&group_by=vid&resample=event_time</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=617,654&fields=$counters&from=2015-11-01T00:00:00&to=2015-11-10T00:00:00&filter=(valid_position+and+hdop+<+3)&how=$counters:diff&freq=1D&group_by=vid&resample=event_time">https://cloud.pegasusgateway.com/api/rawdata?vehicles=617,654&fields=$counters&from=2015-11-01T00:00:00&to=2015-11-10T00:00:00&filter=(valid_position+and+hdop+<+3)&how=$counters:diff&freq=1D&group_by=vid&resample=event_time</a>
 
 ```json
 {
@@ -618,7 +618,7 @@ If the resulting set is less than the values of `head` and `tail` combined, dont
 
 
 > Returns the mean value of all comdelays and the mean value of the RSSI (signal strength) sampled at 1 day intervals, grouped by vehicle IDs<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=617,654&fields=$basic,comdelay,rssi_avg:@cf_rssi&from=2015-11-1T00:00:00&to=2015-11-10T00:00:00&filter=(comdelay+<+3600)&how=comdelay:mean,rssi_avg:mean&freq=1D&group_by=vid&resample=event_time">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=617,654&fields=$basic,comdelay,rssi_avg:@cf_rssi&from=2015-11-1T00:00:00&to=2015-11-10T00:00:00&filter=(comdelay+<+3600)&how=comdelay:mean,rssi_avg:mean&freq=1D&group_by=vid&resample=event_time</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=617,654&fields=$basic,comdelay,rssi_avg:@cf_rssi&from=2015-11-1T00:00:00&to=2015-11-10T00:00:00&filter=(comdelay+<+3600)&how=comdelay:mean,rssi_avg:mean&freq=1D&group_by=vid&resample=event_time">https://cloud.pegasusgateway.com/api/rawdata?vehicles=617,654&fields=$basic,comdelay,rssi_avg:@cf_rssi&from=2015-11-1T00:00:00&to=2015-11-10T00:00:00&filter=(comdelay+<+3600)&how=comdelay:mean,rssi_avg:mean&freq=1D&group_by=vid&resample=event_time</a>
 
 ```json
 {
@@ -741,7 +741,7 @@ If you want to perform fleet level metrics. Try grouping by something else, such
 ## Output Formats
 
 > Export as HTML<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&from=2015-10-30T08:00:00&to=2015-10-30T23:59:59&fields=vid,lat,lon&export=html">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&from=2015-10-30T08:00:00&to=2015-10-30T23:59:59&fields=vid,lat,lon&export=html</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&from=2015-10-30T08:00:00&to=2015-10-30T23:59:59&fields=vid,lat,lon&export=html">https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&from=2015-10-30T08:00:00&to=2015-10-30T23:59:59&fields=vid,lat,lon&export=html</a>
 
 
 |     event_time      |     id     |  label  |   lat   |    lon    | vid
@@ -768,7 +768,7 @@ Need another format? Send us a message on our [Gitter](https://gitter.im/dctdeve
 ## Asynchronous Requests
 
 > An asynchronous requests that generates a job id to be queried later<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&from=2015-09-30T08:00:00&to=2015-09-30T23:59:59&fields=ecu_battery,ecu_distance&filter=speed+%3E+10&async=true">https://pegasus1.pegasusgateway.com/api/rawdata?vehicles=197&from=2015-09-30T08:00:00&to=2015-09-30T23:59:59&fields=ecu_battery,ecu_distance&filter=speed>10&async=true</a>
+> <a href="https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&from=2015-09-30T08:00:00&to=2015-09-30T23:59:59&fields=ecu_battery,ecu_distance&filter=speed+%3E+10&async=true">https://cloud.pegasusgateway.com/api/rawdata?vehicles=197&from=2015-09-30T08:00:00&to=2015-09-30T23:59:59&fields=ecu_battery,ecu_distance&filter=speed>10&async=true</a>
 
 ```json
 {
@@ -778,7 +778,7 @@ Need another format? Send us a message on our [Gitter](https://gitter.im/dctdeve
 ```
 
 > While the job is being processed in the background you can see the progress under /jobs/:job_id<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/jobs/28813">https://pegasus1.pegasusgateway.com/api/jobs/28813</a>
+> <a href="https://cloud.pegasusgateway.com/api/jobs/28813">https://cloud.pegasusgateway.com/api/jobs/28813</a>
 
 ```json
 {
@@ -800,7 +800,7 @@ Need another format? Send us a message on our [Gitter](https://gitter.im/dctdeve
 ```
 
 > Once the job is finished you can see the data here<br>
-> <a href="https://pegasus1.pegasusgateway.com/api/jobs/28813/data.json">https://pegasus1.pegasusgateway.com/api/jobs/28813/data.json</a>
+> <a href="https://cloud.pegasusgateway.com/api/jobs/28813/data.json">https://cloud.pegasusgateway.com/api/jobs/28813/data.json</a>
 
 ```json
 [
