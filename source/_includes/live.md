@@ -14,6 +14,10 @@ The supported socket-io.client library is **v2.x.x**
 
 **Note that polling is disabled on the server, you must use `websocket` as a transport to succesfully connect.**
 
+<aside class="warning">
+Note that we enforce an IP ban for clients that repeatedly get a 400; to avoid this use the websocket transport
+</aside>
+
 *Use the Javascript tab on the right hand side to see sample code*
 
 ## Requirements
