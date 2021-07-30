@@ -104,6 +104,23 @@ Time Signal | Change in time of day
 Front vehicle start alarm | Vehicle in front has started moving, but host vehicle has remained standing still for 2 seconds 
 Forward Proximity Warning | Notifies the driver when there is a vehicle existing in the detection range 
 
+The [Syrus 4](http://syrus.digitalcomtech.com/syrdocs/syrus4/connect/adas.html) supports the following ADAS fields in rawdata:
+
+> ADAS fields
+
+> [api/rawdata?vehicles=1477&duration=P1D&fields=$adas](https://cloud.pegasusgateway.com/api/rawdata?vehicles=3665&duration=P1D&fields=$adas)
+
+* `adas_distance_from_front_vehicle` - distance from front of vehicle in meters
+* `adas_headway_measurement` - headway measurement in seconds
+* `adas_headway_warning_level` - headway warning level
+* `adas_relative_speed_from_front_vehicle` - relative speed from front of vehicle in kph
+* `adas_speed_limit_recognition_sensitivity` - speed limit recognition sensitivity
+* `adas_speed_limit_recognition_state` - speed limit recognition state
+* `adas_speed_limit_recognition` - speed limit recognition value
+* `adas_speed` - adas measured speed 
+* `adas_traffic_signs_recognition_warning_level` - traffic signs recognition warning level
+* `adas_vision_only_sign_type` - vision only sign type
+
 ## Bluetooth Tags
 
 ### Associating to asset

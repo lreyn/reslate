@@ -13,6 +13,16 @@ Field | Info | Type | Unit | Base set
 -----:|------|------|------|---------
 `ac` | GPS acceleration | number | mph/s | ✓
 `ad` | ADC value | number | mV | ✓
+`adas_distance_from_front_vehicle` | [ADAS distance from front of vehicle](#adas) | number | meters | |
+`adas_headway_measurement` | [ADAS headway measurement](#adas) | number | seconds | 
+`adas_headway_warning_level` | [ADAS headway warning level](#adas) | number | | 
+`adas_relative_speed_from_front_vehicle` | [ADAS relative speed from front of vehicle](#adas) | number | kph | |
+`adas_speed_limit_recognition_sensitivity` | [ADAS  speed limit recognition sensitivity](#adas) | number | |
+`adas_speed_limit_recognition_state` | [ADAS speed limit recognition state](#adas)  | number | |
+`adas_speed_limit_recognition` | [ADAS speed limit recognition](#adas) | number | |
+`adas_speed` | [ADAS measured speed](#adas) | number | kph | 
+`adas_traffic_signs_recognition_warning_level` | [ADAS traffic signs recognition warning](#adas) level | number | |
+`adas_vision_only_sign_type` | [ADAS vision only sign type](#adas) | number | |
 `age` | GPS age | number | | ✓
 `aid` | [Asset id](#assets) | number 
 `al` | Altitude | number | meters | ✓
@@ -120,6 +130,9 @@ Field | Info | Type | Unit | Base set
 `ea_b` | [Analog / temp sensor probe B](#temperature-sensor-analog-interface) | number | mV / °C | ✓
 `ea_c` | [Analog / temp sensor probe C](#temperature-sensor-analog-interface) | number | mV / °C | ✓
 `ecu_ac_high_pressure_fan` | A/C high pressure fan switch | number | 
+`ecu_ac_state` | AC state | number | |
+`ecu_accumulated_charge` | Accumulated charged electric quantity | number | kwh |
+`ecu_accumulated_discharge` | Accumulated discharged electric quantity | number | kwh |
 `ecu_aftmt_doc_intk_tmp` | Aftertreatment DOC intake temp | number | °C
 `ecu_aftmt_dpf_diff_psi` | Aftertreatment DPF diff pressure | number | psi
 `ecu_aftmt_dpf_intake_tmp` | Aftertreatment DPF intake temp | number | °C
@@ -130,18 +143,54 @@ Field | Info | Type | Unit | Base set
 `ecu_aftmt_purge_air_act` | Aftertreatment purge air actuator | number |
 `ecu_aftmt_scr_intake_tmp` | Aftertreatment SCR intake temp | number | °C
 `ecu_aftmt_scr_outlet_tmp` | Aftertreatment SCR outlet temp | number | °C
+`ecu_air_flow_state` | Air flow state | number | |
 `ecu_aload` | [Absolute load](#ecu-monitor) | number | % | 
 `ecu_ambient_air_tmp` | [Ambient air temperature](#ecu-monitor) | number | °C | 
+`ecu_b2v_pack_current` | Battery pack current | number | A |
+`ecu_b2v_pack_in_high_voltage` | Voltage inside the battery | number | V |
 `ecu_battery` | [Vehicle battery level](#ecu-monitor) | number | mV | ✓
-`ecu_bms1_total_voltage` | [BMS1 Total voltage](#ecu-monitor) | number | V | ✓
-`ecu_bms1_total_amps` | [BMS1 Total current](#ecu-monitor) | number | A | ✓
-`ecu_bms1_soc` | [BMS1 SOC - State of charge](#ecu-monitor) | number | % | ✓
-`ecu_bms1_positive_insulation_resistance` | [BMS1 positive insulation resistance](#ecu-monitor) | number | kOhm | ✓
+`ecu_bms1_high_voltage_alarm` | The voltage of the cell monomer is too high | number | 
+`ecu_bms1_highest_temp_batt_pack` | Highest temperature battery pack | number | C
+`ecu_bms1_low_voltage_alarm` | The voltage of the cell monomer is too low | number | 
+`ecu_bms1_lowest_temp_batt_pack` | Lowest temperature battery pack | number | C
 `ecu_bms1_negative_insulation_resistance` | [BMS1 negative insulation resistance](#ecu-monitor) | number | kOhm | ✓
+`ecu_bms1_positive_insulation_resistance` | [BMS1 positive insulation resistance](#ecu-monitor) | number | kOhm | ✓
+`ecu_bms1_soc` | [BMS1 SOC - State of charge](#ecu-monitor) | number | % | ✓
+`ecu_bms1_total_amps` | [BMS1 Total current](#ecu-monitor) | number | A | ✓
+`ecu_bms1_total_voltage` | [BMS1 Total voltage](#ecu-monitor) | number | V | ✓
+`ecu_bms2_batt_max_temp` | Battery maximum temperature | number | C
+`ecu_bms2_batt_min_temp` | Battery minimum temperature | number | C
+`ecu_bms2_higher_voltage_cell` | Maximum voltage of a single cell | number | V
+`ecu_bms2_lower_voltage_cell` | Minimum voltage of a single cell | number | V
+`ecu_bms3_fullbatt_threshold_fail` | full battery voltage threshold fail | number | 
+`ecu_bms3_lowbatt_threshold_fail` | Low battery voltage threshold fail | number | 
+`ecu_bms3_max_charge_current_allowed` | Maximum charge current allowed | number | A
+`ecu_bms3_max_charge_voltage_allowed` | Maximum charge voltage allowed | number | V
+`ecu_bms3_max_cont_charge_current_allowed` | Maximum continuous charge current allowed | number | A
+`ecu_bms3_max_discharge_current_allowed` | Maximum discharge current allowed (positive value) | number | A
+`ecu_bms4_batt_nominal_voltage` | Battery nominal voltage | number | V
+`ecu_bms4_total_batt_case` | Total battery case | number | 
+`ecu_bms4_total_batt_temp_nodes` | Total battery temperature nodes | number | 
+`ecu_bms4_total_cell_chain` | Total cell chain | number | 
+`ecu_bms5_charger_connected` | Charger connected | number | 
+`ecu_bms6_batt_cooling_request` | Battery cooling request | number | 
+`ecu_bms7_batt_current_sensor_fail` | Battery current sensor fail | number | 
+`ecu_bms7_batt_temp_sensor_fail` | Battery temperature sensor fail | number | 
+`ecu_bms7_batt_terminal_temp_sensor_fail` | Battery terminal temperature sensor fail | number | 
+`ecu_bms7_charge_alarm_comm` | Communication with charge alarm | number | 
+`ecu_bms7_charge_overcurrent_alarm` | Charge overcurrent alarm | number | 
+`ecu_bms7_comm_slave_alarm` | Communication with the slave alarm | number | 
+`ecu_bms7_discharge_overcurrent_alarm` | Discharge overcurrent alarm | number | 
+`ecu_bms7_low_total_voltage_alarm` | Low total voltage alarm | number | 
+`ecu_bms7_total_overvoltage_alarm` | Total overvoltage alarm | number | 
+`ecu_bms9_nominal_current_capacity` | Nominal current capacity of the battery | number | A
+`ecu_bms9_nominal_power` | Nominal power | number | W
+`ecu_bms9_remaining_power` | Remaining power | number | W
+`ecu_bms9_total_nominal_voltage` | Total nominal voltage | number | V
 `ecu_bpressure` | [Barometric pressure](#ecu-monitor) | number | kPa | 
 `ecu_brake_pedal` | [Brake pedal pressed](#ecu-monitor) | number | % | 
-`ecu_ccontrol` | [Cruise control state](#ecu-monitor) | number | | 
 `ecu_ccontrol_set_speed` | Cruise control set speed | number | kph | 
+`ecu_ccontrol` | [Cruise control state](#ecu-monitor) | number | | 
 `ecu_clutch_pedal` | [Clutch pedal](#ecu-monitor) | number | | 
 `ecu_cool_lvl` | [Coolant level](#ecu-monitor) | number | % | ✓
 `ecu_cool_psi` | [Coolant pressure](#ecu-monitor) | number | psi | ✓
@@ -152,9 +201,11 @@ Field | Info | Type | Unit | Base set
 `ecu_def_tmp` | [Diesel exhaust fluid temperature](#ecu-monitor) | number | °C | 
 `ecu_dist` | [Engine distance traveled](#counters) | number | meter
 `ecu_distance` | [Total distance](#ecu-monitor) | number | meters | ✓
+`ecu_door_closed` | Door closed | number | |
 `ecu_dpf_intake_psi` | Diesel particulate filter intake pressure| number | psi
 `ecu_dpf_soot_load` | Diesel particulate filter soot load | number | %
 `ecu_dpf_status` | Diesel particulate filter active regeneration status | number | 
+`ecu_drive_state` | Drive state | number | |
 `ecu_dtc_cleared` | [Time since DTC cleared](#ecu-monitor) | number | minutes | 
 `ecu_eidle` | [Engine engine idling time](#counters) | number | centihours
 `ecu_eload` | [Engine load](#ecu-monitor) | number | % | 
@@ -184,39 +235,89 @@ Field | Info | Type | Unit | Base set
 `ecu_eon` | [Time since engine ON](#ecu-monitor) | number | seconds | ✓
 `ecu_error`<span style="color:#005596">1-7</span> | [Engine error code](#ecu-monitor) | number | | ✓
 `ecu_eusage` | [Engine ignition on count](#counters) | number | centihours
+`ecu_ev_battery_vol_status_df` | Electric vehicle battery vol status df | number | 
+`ecu_ev_charger_door_status` | Electric vehicle charging compartment door status | Number | |
+`ecu_ev_charging_current` | Electric vehicle charging current | number | A
+`ecu_ev_charging_end_hours` | Electric vehicle charging end hours | number | hours |
+`ecu_ev_charging_end_minutes` | Electric vehicle charging end minutes | number | minutes |
+`ecu_ev_charging_end_secs` | Electric vehicle charging end secs | number | secs |
+`ecu_ev_charging_start_hours` | Electric vehicle charging start hours | number | hours |
+`ecu_ev_charging_start_minutes` | Electric vehicle charging start minutes | number | minutes |
+`ecu_ev_charging_start_secs` | Electric vehicle charging start secs | number | secs |
+`ecu_ev_charging_voltage` | Electric vehicle charging voltage | number | voltage |
+`ecu_ev_first_level_fault_code` | Electric vehicle first level fault code | number | 
+`ecu_ev_fourth_level_fault_code` | Electric vehicle fourth level fault code | number | 
+`ecu_ev_front_air_pressure` | Electric vehicle odometer | Number | km |
+`ecu_ev_front_door_status` | Electric vehicle front door status | Number | |
+`ecu_ev_insulation_alarm_df` | Electric vehicle insulation alarm df | number | 
+`ecu_ev_insulation_status_df` | Electric vehicle insulation status df | number | 
+`ecu_ev_mid_door_status` | Electric vehicle middle door status | Number | |
+`ecu_ev_motor_current` | Electric vehicle motor current | Number | A |
+`ecu_ev_motor_voltage` | Electric vehicle motor voltage | Number | V |
+`ecu_ev_rear_air_pressure` | Electric vehicle rear air pressure | Number | kPa |
+`ecu_ev_s1_anode_temp` | Electric vehicle s1 anode temp | number | C
+`ecu_ev_s1_cathode_temp` | Electric vehicle s1 cathode temp | number | C
+`ecu_ev_s2_anode_temp` | Electric vehicle s2 anode temp | number | C
+`ecu_ev_s2_cathode_temp` | Electric vehicle s2 cathode temp | number | C
+`ecu_ev_second_level_fault_code` | Electric vehicle second level fault code | number | 
+`ecu_ev_third_level_fault_code` | Electric vehicle third level fault code | number | 
 `ecu_fan_state` | [Fan state](#ecu-monitor) | number | | ✓
+`ecu_fault_level_of_insulation_detection` | Fault level of insulation detection | number | |
 `ecu_fpressure` | [Fuel pressure](#ecu-monitor) | number | | 
 `ecu_fuel_iconsumption` | [Instant fuel consumption](#ecu-monitor) | number | centi-liters/hours | ✓
-`ecu_fuel_level` | [Analog fuel level](#ecu-monitor) | number | mV | ✓
 `ecu_fuel_level_real` | [Fuel level](#ecu-monitor) | number | % | ✓
+`ecu_fuel_level` | [Analog fuel level](#ecu-monitor) | number | mV | ✓
 `ecu_fuel_tmp` | Engine fuel temperature | number | °C
-`ecu_hours` | [Total engine usage](#ecu-monitor) | number | centihours | ✓
+`ecu_handbrake` | Handbrake | number | |
+`ecu_heater_state` | Heater state | number | |
 `ecu_hours_idle` | [Total engine usage while idling](#ecu-monitor) | number | centihours | ✓
+`ecu_hours` | [Total engine usage](#ecu-monitor) | number | centihours | ✓
 `ecu_hydr_oil_lvl` | [Hydraulic oil level](#ecu-monitor) | number | % | ✓
 `ecu_hydr_oil_psi` | [Hydraulic oil pressure](#ecu-monitor) | number | psi | ✓
 `ecu_hydr_oil_tmp` | [Hydraulic oil temperature](#ecu-monitor) | number | °C  | ✓
 `ecu_idle_fuel` | [Fuel consumed while idle](#ecu-monitor) | number | deciliters | ✓
 `ecu_ifuel` | [Engine fuel consumed while Idling](#counters) | number | centiliters
+`ecu_ignition_state` | Ignition state | number | |
 `ecu_ins_efficiency` | [Fuel instant efficiency](#ecu-monitor) | number | deci-km/l | ✓
+`ecu_insulation_detection_status` | Work status: Insulation detection status | number | |
 `ecu_intake_air_tmp` | [Intake air temperature](#ecu-monitor) | number | °C | 
 `ecu_intake_manif_tmp` | [Intake manifold temperature](#ecu-monitor) | number | °C | ✓
 `ecu_maf` | [Malfunction Indicator Lamp code](#ecu-monitor) | number | | ✓
+`ecu_main_pos_relay_flt` | Fault of vehicle main-positive contactor | number | |
+`ecu_max_available_temp_batt` | Maximum available temperature of battery pack | number | C |
+`ecu_max_available_voltage_batt` | Maximum available voltage of battery pack | number | V |
 `ecu_mil_error_code` | [Malfunction Indicator Lamp code](#ecu-monitor) | number | | ✓
 `ecu_mil_error_count` | [Malfunction Indicator Lamp count](#ecu-monitor) | number | | ✓
 `ecu_mil_state` | [Malfunction Indicator Lamp state](#ecu-monitor) | boolean | | ✓
+`ecu_min_available_temp_batt` | Minimum available temperature of battery pack | number | C |
+`ecu_min_available_voltage_batt` | Minimum available voltage of battery pack | number | V |
+`ecu_negative_insulation_value` | Negative insulation value | number | kohm |
+`ecu_neutral_state` | Neutral state | number | |
 `ecu_nominal_friction_torque` | Nominal friction percent torque | number | %
 `ecu_obd_auxios` | [OBD auxiliary I/Os](#ecu-monitor) | number | | 
 `ecu_obd_ftype` | [Fuel type](#ecu-monitor) | number | | 
 `ecu_oxygen` | [Oxygen level](#ecu-monitor) | number | mV | ✓
 `ecu_pg`<span style="color:#005596">1-4</span> | [Custom PGNs](#ecu-monitor) | number | | ✓
+`ecu_positive_insulation_value` | Positive insulation value | number | kohm |
 `ecu_pto` | [PTO status](#ecu-monitor) | number | |
+`ecu_rated_capacity_battery` | Rated capacity of battery | number | Ah |
+`ecu_rated_total_energy_battery` | Total energy of battery | number | kWh |
+`ecu_rated_voltage_battery` | Rated voltage of battery | number | V |
 `ecu_rbatt` | [Hybrid battery life](#ecu-monitor) | number | % |
+`ecu_ready_state` | Ready state | number | |
+`ecu_regenerative_brake_level` | Regenerative brake level | number | |
 `ecu_remote_accel_enable` | Remote accelerator enable switch | number | 
 `ecu_remote_accel_pedal` | Remote accelerator pedal position | number | %
 `ecu_retarder_brake_assist` | Retarder enable - brake assist switch | number | 
+`ecu_reverse_state` | Reverse state | number | |
 `ecu_rpm` | [Revolutions per minute](#ecu-monitor) | number | rpm | ✓
 `ecu_serv_distance` | [Distance left to service vehicle](#ecu-monitor) | number | km | 
+`ecu_single_charge_electric` | Single charged electric quantity | number | kwh |
 `ecu_speed` | [Engine speed](#ecu-monitor) | number | kph | 
+`ecu_stability_control_level` | Stability control level | number | |
+`ecu_stability_control` | Stability control | number | |
+`ecu_state_of_charge` | SOC. State of charge | number | % |
+`ecu_state_of_health` | SOH. State of health | number | % |
 `ecu_tfuel` | [Engine total fuel consumed](#counters) | number | deciliters 
 `ecu_throttle` | [Throttle pedal position](#ecu-monitor) | number | % | ✓
 `ecu_tires_psi` | [Tires pressure](#tpms) | string | psi |
@@ -224,80 +325,20 @@ Field | Info | Type | Unit | Base set
 `ecu_torque` | [Torque position](#ecu-monitor) | number | % | ✓
 `ecu_total_fuel` | [Total fuel consumed](#ecu-monitor) | number | deciliters | ✓
 `ecu_total_run_time` | Total ECU run time | number | hour | 
+`ecu_tpms_conditions` | [TPMS conditions](#tpms) | string | | 
 `ecu_tpms_provision` | [TPMS provision](#tpms) | string | | 
 `ecu_tpms_warnings` | [TPMS warnings](#tpms) | string | | 
-`ecu_tpms_conditions` | [TPMS conditions](#tpms) | string | | 
 `ecu_trans_lvl` | [Transmission oil level](#ecu-monitor) | number | % | ✓
 `ecu_trans_psi` | [Transmission oil pressure](#ecu-monitor) | number | psi | ✓
 `ecu_trans_tmp` | [Transmission oil temperature](#ecu-monitor) | number | °C | ✓
-`ecu_trip_fuel` | [Trip fuel](#ecu-monitor) | number | liters | ✓
+`ecu_transmission_gear` | Transmission gear | number | | 
 `ecu_trip_distance` | [Trip distance](#ecu-monitor) | number | meter | ✓
+`ecu_trip_fuel` | [Trip fuel](#ecu-monitor) | number | liters | ✓
 `ecu_vin` | [VIN number](#ecu-monitor) | string | | 
 `ecu_water_in_fuel` | Water in fuel indicator | number | 
 `ecu_weights` | [Vehicle weights](#ecu-monitor) | string | kg | ✓
 `ecu_with_mil_distance` | [Distance traveled with MIL on](#ecu-monitor) | number | meter | ✓
 `ecu_with_mil_time` | [Time traveled with MIL on](#ecu-monitor) | number | minutes | 
-`ecu_ev_motor_current` | Electric vehicle motor current | Number | A |
-`ecu_ev_motor_voltage` | Electric vehicle motor voltage | Number | V |
-`ecu_ev_soh` | Electric vehicle SOH | Number | |
-`ecu_ev_charger_door_status` | Electric vehicle charging compartment door status | Number | |
-`ecu_ev_mid_door_status` | Electric vehicle middle door status | Number | |
-`ecu_ev_front_door_status` | Electric vehicle front door status | Number | |
-`ecu_ev_rear_air_pressure` | Electric vehicle rear air pressure | Number | kPa |
-`ecu_ev_front_air_pressure` | Electric vehicle odometer | Number | km |
-`ecu_ev_throttle` | Electric vehicle throtle position | Number | % |
-`ecu_main_pos_relay_flt` | Fault of vehicle main-positive contactor | number | |
-`ecu_insulation_detection_status` | Work status: Insulation detection status | number | |
-`ecu_fault_level_of_insulation_detection` | Fault level of insulation detection | number | |
-`ecu_positive_insulation_value` | Positive insulation value | number | kohm |
-`ecu_negative_insulation_value` | Negative insulation value | number | kohm |
-`ecu_rated_capacity_battery` | Rated capacity of battery | number | Ah |
-`ecu_rated_voltage_battery` | Rated voltage of battery | number | V |
-`ecu_rated_total_energy_battery` | Total energy of battery | number | kWh |
-`ecu_max_available_voltage_batt` | Maximum available voltage of battery pack | number | V |
-`ecu_min_available_voltage_batt` | Minimum available voltage of battery pack | number | V |
-`ecu_max_available_temp_batt` | Maximum available temperature of battery pack | number | C |
-`ecu_min_available_temp_batt` | Minimum available temperature of battery pack | number | C |
-`ecu_state_of_charge` | SOC. State of charge | number | % |
-`ecu_state_of_health` | SOH. State of health | number | % |
-`ecu_b2v_pack_current` | Battery pack current | number | A |
-`ecu_b2v_pack_in_high_voltage` | Voltage inside the battery | number | V |
-`ecu_bms1_high_voltage_alarm` | The voltage of the cell monomer is too high | number | 
-`ecu_bms1_low_voltage_alarm` | The voltage of the cell monomer is too low | number | 
-`ecu_bms2_lower_voltage_cell` | Minimum voltage of a single cell | number | V
-`ecu_bms2_higher_voltage_cell` | Maximum voltage of a single cell | number | V
-`ecu_bms3_max_discharge_current_allowed` | Maximum discharge current allowed (positive value) | number | A
-`ecu_bms3_max_charge_current_allowed` | Maximum charge current allowed | number | A
-`ecu_bms3_max_cont_charge_current_allowed` | Maximum continuous charge current allowed | number | A
-`ecu_bms3_max_charge_voltage_allowed` | Maximum charge voltage allowed | number | V
-`ecu_bms2_batt_min_temp` | Battery minimum temperature | number | C
-`ecu_bms2_batt_max_temp` | Battery maximum temperature | number | C
-`ecu_bms7_comm_slave_alarm` | Communication with the slave alarm | number | 
-`ecu_bms7_charge_alarm_comm` | Communication with charge alarm | number | 
-`ecu_bms7_low_total_voltage_alarm` | Low total voltage alarm | number | 
-`ecu_bms7_total_overvoltage_alarm` | Total overvoltage alarm | number | 
-`ecu_bms7_charge_overcurrent_alarm` | Charge overcurrent alarm | number | 
-`ecu_bms7_discharge_overcurrent_alarm` | Discharge overcurrent alarm | number | 
-`ecu_bms7_batt_temp_sensor_fail` | Battery temperature sensor fail | number | 
-`ecu_bms7_batt_current_sensor_fail` | Battery current sensor fail | number | 
-`ecu_bms7_batt_terminal_temp_sensor_fail` | Battery terminal temperature sensor fail | number | 
-`ecu_bms5_charger_connected` | Charger connected | number | 
-`ecu_bms6_batt_cooling_request` | Battery cooling request | number | 
-`ecu_bms3_lowbatt_threshold_fail` | Low battery voltage threshold fail | number | 
-`ecu_bms3_fullbatt_threshold_fail` | full battery voltage threshold fail | number | 
-`ecu_bms4_total_batt_case` | Total battery case | number | 
-`ecu_bms4_total_cell_chain` | Total cell chain | number | 
-`ecu_bms4_total_batt_temp_nodes` | Total battery temperature nodes | number | 
-`ecu_bms4_batt_nominal_voltage` | Battery nominal voltage | number | V
-`ecu_bms1_highest_temp_batt_pack` | Highest temperature battery pack | number | C
-`ecu_bms1_lowest_temp_batt_pack` | Lowest temperature battery pack | number | C
-`ecu_bms9_nominal_current_capacity` | Nominal current capacity of the battery | number | A
-`ecu_bms9_total_nominal_voltage` | Total nominal voltage | number | V
-`ecu_bms9_nominal_power` | Nominal power | number | W
-`ecu_bms9_remaining_power` | Remaining power | number | W
-`ecu_accumulated_charge` | Accumulated charged electric quantity | number | kwh |
-`ecu_accumulated_discharge` | Accumulated discharged electric quantity | number | kwh |
-`ecu_single_charge_electric` | Single charged electric quantity | number | kwh |
 `event_epoch` | Event time as epoch | number | |
 `event_time` | Time the event was generated by the device (YYYY-MM-DDThh:mm:ss) | string | | ✓
 `flow_meter_state` | Flow Meter State | boolean | |
