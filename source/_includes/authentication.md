@@ -141,6 +141,7 @@ $ curl https://cloud.pegasusgateway.com/api/logout?auth=640c59b1df21aed608fe9cb7
 ```
 
 > Create a receiver token
+
 > be sure to use an application token in the `Authenticate` header of the request to create the json receiver token
 
 ```shell
@@ -165,7 +166,7 @@ curl -X DELETE https://cloud.pegasusgateway.com/api/tokens/89bfe5e6cbdd3696fd38d
     --header 'Content-Type: application/json'
 ```
 
-You can also create tokens for the data receiver endpoints, a requirement in order to start receiving data on your Pegasus Gateway from third party devices, [reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Tokens).
+You can also create tokens for the [data receiver endpoints](#receive-for-a-vehicle), a requirement in order to start receiving data on your Pegasus Gateway from third party devices, [reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Tokens).
 
 param | description
 ------:|-------------
