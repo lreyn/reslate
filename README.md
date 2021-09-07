@@ -33,10 +33,17 @@ or
 
 ## TODO
 
-* [ ] [Watch](https://www.belter.io/eleventy-sass-workflow/) scss files
-* [ ] Option to use lunr server-side / across multiple files [#1006](https://github.com/slatedocs/slate/discussions/1006)
-* [ ] GitHub emoji shortcuts (as in Shins), yea or nay?
-* [ ] Specify additional CSS includes in header?
+Restructure:
+[] Intro
+[] Auth: (Tokens)
+[] Entities
+[] Device data: Rawdata;Counters;Trips;
+[] Gateway data: Geofences;Routes;Automation;Reports;Labels
+[] Interactions: Accessories;Devices
+[] Integrations: Live communications;Forwarders;Data upload api (Tokens)
+[] Services: Reverse geocoding
+[] Master fields list
+[] Examples
 
 ## Additional plugin possibilities
 
