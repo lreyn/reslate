@@ -4,7 +4,7 @@ Pegasus allows you to upload custom device data via an HTTP POST method. For exa
 
 Data can be uploaded and associated to an entity type [vehicle](#vehicles) or to an entity type: [asset](#assets).
 
-## Vehicles
+## Receive for a vehicle
 
 Read the following instructionss on how to get started uploading data to your Pegasus Gateway from third party platforms/devices - [documentation for Gateway administrators](https://drive.google.com/open?id=1C5VIos3IKzb30iGwXy8dn1OukIPePL5E) / [documentation for end user/developer](https://drive.google.com/open?id=1Vz65R6U6J9ZfvB9j_EJeMnAJ7YusQd-U)
 
@@ -20,7 +20,7 @@ For the first 2 steps you can contact your [account representative](mailto:sales
 
 For the last step you can use the Webservices section of Pegasus Gateway or see the [tokens api](#data-receiver-tokens) section to create data receiver tokens.
 
-## Assets
+## Receive for an asset
 
 ### Authentication
 
