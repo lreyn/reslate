@@ -43,7 +43,7 @@ curl -X POST https://cloud.pegasusgateway.com/api/login \
 }
 ```
 
-To authenticate use the `/login` resource.
+To authenticate with the API use the `/login` resource.
 
 param | description
 ------:|-------------
@@ -58,15 +58,16 @@ A successful login returns a token that <b>has to be used on every subsequent re
 The token that's generated has to be sent on a header called <b style="color:#005596;">Authenticate</b> in order to retrieve data from the API.<br>
 `Authenticate: 7ebbd199ecb10a156bdc189d3e0cd8ad9f9b676979deaaadca3612c0`
 
-
 When sending JSON make sure you use the following <b style="color:#005596">Content-Type</b> header<br>
 `Content-Type: application/json`
 
-## Sessions
+Application tokens can be created to interact with the API, these tokens create a _virtualized_ version of your user in order to interact with the API.
+
+## Application tokens
 
 > View tokens you have created
 
-> [`api/user/sessions`](https://cloud.pegasusgateway.com/api/user/sessions)
+> GET [`api/user/sessions`](https://cloud.pegasusgateway.com/api/user/sessions)
 
 ```json
 {
@@ -93,38 +94,109 @@ When sending JSON make sure you use the following <b style="color:#005596">Conte
 }
 ```
 
-You can manage tokens and the current session with the `/user/sessions` resource.  You can also create your own tokens with a **POST** to the same resource
+The application tokens can be managed using the `user/sessions` API, [reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Authentication-CreateToken).
 
 param | description
 ------:|-------------
 scheme | infinite or finite token
 limit | limit of token in seconds
 app | custom app name
-scopes | specify the group(s) id that the token has access to, and any [scope](#scopes)
+scopes | url param format, params: `groups` allowing to write a csv of group IDs that the token will have access to, and any scope using the params `write` or `read` and setting these equal to a csv of the scopes you want to be able to write/read
 app_scheme | pegasus application use only
 
 <aside class="warning">Note that only 50 infinite tokens are allowed per account. To remove a token use the logout method.</aside>
 
-<!-- TODO: document user/sessions -->
-
-> Create a scoped API token
+> Create a scoped application token
 
 ```shell
-curl -X POST https://cloud.pegasusgateway.com/api/user/sessions \
+$ curl -X POST https://cloud.pegasusgateway.com/api/user/sessions \
     --header 'Content-Type: application/json' \
     --header 'Authenticate: 7ebbd199ecb10a156bdc189d3e0cd8ad9f9b676979deaaadca3612c0' \
     -d '{"scheme":"infinite","app":"myApp","scopes":"groups=285&write=remote.output,tasks"}'
 ```
 
-> Remove a token
+> Delete an application token
 
 ```shell
-curl https://cloud.pegasusgateway.com/api/logout?auth=640c59b1df21aed608fe9cb775d56faaea9e33dd74730e31a94456e2 \
+$ curl https://cloud.pegasusgateway.com/api/logout?auth=640c59b1df21aed608fe9cb775d56faaea9e33dd74730e31a94456e2 \
     --header 'Content-Type: application/json'
 
 {"message": "Session terminated"}
 ```
 
+## Data receiver tokens
+
+> View receiver tokens you have created
+
+> GET [`api/tokens`](https://cloud.pegasusgateway.com/api/tokens)
+
+```json
+{
+    "origin": "--",
+    "app": "my-app",
+    "token": "89bfe5e6cbdd3696fd38d8d942e2def98253ae81256cfd15123456789",
+    "app_scheme": "ips=12.12.12.12,13.13.13.13",
+    "scheme": "infinite"
+}
+```
+
+> Create a receiver token
+> be sure to use an application token in the `Authenticate` header of the request to create the json receiver token
+
+```shell
+$ curl -X POST https://cloud.pegasusgateway.com/api/tokens \
+    --header 'Content-Type: application/json' \
+    --header 'Authenticate: 7ebbd199ecb10a156bdc189d3e0cd8ad9f9b676979deaaadca3612c0' \
+    -d '{"resource":"receivers.json","app":"my-app","app_scheme":"ips=12.12.12.12,13.13.13.13"}'
+
+{
+    "origin": "--",
+    "app": "my-app",
+    "token": "89bfe5e6cbdd3696fd38d8d942e2def98253ae81256cfd15123456789",
+    "app_scheme": "ips=12.12.12.12,13.13.13.13",
+    "scheme": "infinite"
+}
+```
+
+> Delete a receiver token
+
+```shell
+curl -X DELETE https://cloud.pegasusgateway.com/api/tokens/89bfe5e6cbdd3696fd38d8d942e2def98253ae81256cfd15123456789 \
+    --header 'Content-Type: application/json'
+```
+
+You can also create tokens for the data receiver endpoints, a requirement in order to start receiving data on your Pegasus Gateway from third party devices, [reference docs](https://cloud.pegasusgateway.com/api-static/docs/#api-Tokens).
+
+param | description
+------:|-------------
+resource | set to the data receiver (so far: `receivers.json`)
+app | custom app name
+app_scheme | url param format, params: `ips` which is a CSV of ip addresses to allow data from, and `ips_blacklist` when set to 1 the list of `ips` is treated as a blacklist.
+
+### Receiver token streams
+
+You can view the incoming data requests that use specific tokens using token streams.
+
+The request is a `GET` with the `/api/tokens/:receiver_token/stream` replacing `:receiver_tokens` with the actual receiver token.
+
+> View incoming data for the receiver token
+
+> GET [`api/tokens/:receiver_token/stream`](https://cloud.pegasusgateway.com/api/tokens/)
+
+```json
+{
+    "size": 25,
+    "items": [
+        {
+            "body": "[{\"vehicle.name\":\"red truck\",\"engine.hours\":4.59,\"position.altitude\":1453,\"position.heading\":179,\"position.hdop\":0.7,\"position.latitude\":6.322105,\"position.longitude\":-75.551478,\"position.satellites\":10,\"position.speed\":6,\"position.valid\":true,\"server.timestamp\":1631014478.971503,\"timestamp\":1630937864,\"vehicle.mileage\":112766.605}]",
+            "url": "http://pegasus2.peginstances.com/json",
+            "headers": "X-Client-Ip: 12.12.12.12\nContent-Length: 648\nAuthenticate: 89bfe5e6cbdd3696fd38d8d942e2def98253ae81256cfd15123456789\nConnection: Keep-alive\nHost: cloud.pegasusgateway.com\nContent-Type: application/json\n",
+            "time": "2021-09-07 11:34:39+00:00",
+            "method": "POST",
+            "remote_ip": "12.12.12.12"
+        },
+        ...
+```
 
 ## Scopes
 
