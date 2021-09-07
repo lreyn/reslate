@@ -21,7 +21,7 @@ code | description | meaning
 204 | NO CONTENT | Status when wrapped responses are not used and nothing is in the body (e.g. DELETE).
 304 | NOT MODIFIED | Used in response to conditional GET calls to reduce bandwidth usage.
 400 | BAD REQUEST | General error when fulfilling the request would cause an invalid state. Domain validation errors, missing data, etc.
-401| UNAUTHORIZED | User is not authenticated with Gateway, does not have the required scopes, or does not share groups with requested entity
+401| UNAUTHORIZED | User is not authenticated with Gateway, does not have permission to upload data, does not have the required scopes, or does not share groups with requested entity
 403| FORBIDDEN | User is not allowed to perform operation, regardless of scopes or admin level.
 404 | NOT FOUND | Used when the requested resource is not found, whether it doesn't exist or if there was a 401 or 403 that, for security reasons, the service wants to mask.
 409| CONFLICT | Whenever a resource conflict would be caused by fulfilling the request. Duplicate entries, deleting root objects when cascade-delete not supported are a couple of examples.
@@ -118,14 +118,14 @@ X-RateLimit-Reset | when it's safe to make more requests
 
 ## Units
 
-Unless otherwise specified, the API handles all units for keys in the following manner by default.
+Server level caching is done on requests that are similar, therefor it's important to specify the units of a request in order to make it as atomic as possible. By default the API uses the following units unless otherwise stated:
 
 Metric | Unit
 ---- | ----
 Distance | __meter__
 Volume | __liter__
 Time | __second__
-Temperature | __Celsius__
+Temperature | __celsius__
 
 Speed and acceleration units vary per resource, but will normally take the form of 
 
