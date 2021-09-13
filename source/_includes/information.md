@@ -118,7 +118,7 @@ X-RateLimit-Reset | when it's safe to make more requests
 
 ## Units
 
-Server level caching is done on requests that are similar, therefor it's important to specify the units of a request in order to make it as atomic as possible. By default the API uses the following units unless otherwise stated:
+Server level caching is done on requests that are similar, therefore it's important to specify the units of a request in order to make it as atomic as possible. By default the API uses the following units unless otherwise stated:
 
 Metric | Unit
 ---- | ----
