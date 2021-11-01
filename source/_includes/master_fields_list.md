@@ -196,7 +196,7 @@ Field | Info | Type | Unit | Base set
 `ecu_cool_psi` | [Coolant pressure](#ecu-monitor) | number | psi | ✓
 `ecu_cool_tmp` | [Coolant temperature](#ecu-monitor) | number | °C | ✓
 `ecu_ddemand` | [Driver's demand engine torque](#ecu-monitor) | number | % | 
-`ecu_def_consumed` | [Diesel exhaust fluid consumed](#ecu-monitor) | number | liters | 
+`ecu_def_consumed` | [Diesel exhaust fluid consumed](#ecu-monitor) | number | centi-liters | 
 `ecu_def_level` | [Diesel exhaust fluid level](#ecu-monitor) | number | % | 
 `ecu_def_tmp` | [Diesel exhaust fluid temperature](#ecu-monitor) | number | °C | 
 `ecu_dist` | [Engine distance traveled](#counters) | number | meter
